@@ -37,6 +37,9 @@
 
 $(document).ready(function() {
 
-	// make magic
+	// menu-bar tooltips
+	$(".menu-bar a").tipper({
+		direction: "bottom"
+	});
 
 });
