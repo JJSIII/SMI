@@ -133,10 +133,6 @@
 
 /* @group SMI */
 
-	img { /* flag */
-		display: block;
-	}
-
 	.smi-mask {
 		background-color: rgba(0,0,0,.5);
 		bottom: 0;
@@ -154,6 +150,10 @@
 		box-sizing: border-box;
 		overflow: hidden;
 	}
+	
+		.smi-modal img { /* flag */
+			display: block;
+		}
 
 	@media (min-width: 480px) {
 		
