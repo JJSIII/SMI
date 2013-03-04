@@ -5,6 +5,143 @@
 
 /* @end */
 
+/* @group Icon Font */
+
+	@font-face {
+		font-family: 'icomoon';
+		src:url('/font/icomoon.eot');
+		src:url('/font/icomoon.eot?#iefix') format('embedded-opentype'),
+			url('/font/icomoon.woff') format('woff'),
+			url('/font/icomoon.ttf') format('truetype'),
+			url('/font/icomoon.svg#icomoon') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	
+	/* Use the following CSS code if you want to use data attributes for inserting your icons */
+	[data-icon]:before {
+		font-family: 'icomoon';
+		content: attr(data-icon);
+		speak: none;
+		font-weight: normal;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+	}
+	
+	/* Use the following CSS code if you want to have a class per icon */
+	/*
+	Instead of a list of all class selectors,
+	you can use the generic selector below, but it's slower:
+	[class*="icon-"]:before {
+	*/
+	.icon-pushpin:before, .icon-windows8:before, .icon-windows:before, .icon-dashboard:before, .icon-flag:before, .icon-star:before, .icon-warning:before, .icon-info:before, .icon-checkmark-circle:before, .icon-cancel-circle:before, .icon-close:before, .icon-plus:before, .icon-ticket:before, .icon-cog:before, .icon-cogs:before, .icon-alarm:before, .icon-list:before, .icon-wrench:before, .icon-user:before, .icon-calendar:before, .icon-arrow-down:before, .icon-arrow-left:before, .icon-arrow-right:before, .icon-arrow-up:before, .icon-checkmark:before, .icon-minus:before, .icon-tags:before, .icon-new-tab:before, .icon-search:before, .icon-power:before, .icon-envelop:before, .icon-phone:before {
+		font-family: 'icomoon';
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+	}
+	.icon-pushpin:before {
+		content: "\e000";
+	}
+	.icon-windows8:before {
+		content: "\e001";
+	}
+	.icon-windows:before {
+		content: "\e002";
+	}
+	.icon-dashboard:before {
+		content: "\e003";
+	}
+	.icon-flag:before {
+		content: "\e004";
+	}
+	.icon-star:before {
+		content: "\e005";
+	}
+	.icon-warning:before {
+		content: "\e006";
+	}
+	.icon-info:before {
+		content: "\e007";
+	}
+	.icon-checkmark-circle:before {
+		content: "\e008";
+	}
+	.icon-cancel-circle:before {
+		content: "\e009";
+	}
+	.icon-close:before {
+		content: "\e00a";
+	}
+	.icon-plus:before {
+		content: "\e00b";
+	}
+	.icon-ticket:before {
+		content: "\e00c";
+	}
+	.icon-cog:before {
+		content: "\e00d";
+	}
+	.icon-cogs:before {
+		content: "\e00e";
+	}
+	.icon-alarm:before {
+		content: "\e00f";
+	}
+	.icon-list:before {
+		content: "\e010";
+	}
+	.icon-wrench:before {
+		content: "\e011";
+	}
+	.icon-user:before {
+		content: "\e012";
+	}
+	.icon-calendar:before {
+		content: "\e013";
+	}
+	.icon-arrow-down:before {
+		content: "\e014";
+	}
+	.icon-arrow-left:before {
+		content: "\e015";
+	}
+	.icon-arrow-right:before {
+		content: "\e016";
+	}
+	.icon-arrow-up:before {
+		content: "\e017";
+	}
+	.icon-checkmark:before {
+		content: "\e018";
+	}
+	.icon-minus:before {
+		content: "\e019";
+	}
+	.icon-tags:before {
+		content: "\e01a";
+	}
+	.icon-new-tab:before {
+		content: "\e01b";
+	}
+	.icon-search:before {
+		content: "\e01c";
+	}
+	.icon-power:before {
+		content: "\e01d";
+	}
+	.icon-envelop:before {
+		content: "\e01e";
+	}
+	.icon-phone:before {
+		content: "\e01f";
+	}
+	
+
+/* @end */
+
 /* @group Environment */
 
 	html,
@@ -152,10 +289,6 @@
 		box-sizing: border-box;
 		overflow: hidden;
 	}
-	
-		.smi-modal img { /* flag */
-			display: block;
-		}
 
 	@media (min-width: 480px) {
 		
@@ -176,7 +309,7 @@
 	
 	/* @group Menu Bar */
 	
-		.smi-container--menu-bar {
+		.smi-modal .menu-bar {
 			background-color: #e7ecef;
 			background-image: -webkit-gradient(linear, left top, left bottom, from(#e7ecef), to(#e1e7e9));
 			background-image: -webkit-linear-gradient(top, #e7ecef, #e1e7e9);
@@ -186,10 +319,74 @@
 			background-image: linear-gradient(top, #e7ecef, #e1e7e9);
 			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#e7ecef', EndColorStr='#e1e7e9');
 			box-shadow: inset 0 -1px 0 #c9ced1;
-			height: 21px;
+			height: 31px;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
 		}
 		
-		.smi-container--machine-info {
+			.smi-modal .menu-item {
+				color: #bcc4cc;
+				display: block;
+				float: left;
+				line-height: 31px;
+				padding: 0 10px;
+				text-align: center;
+			}
+			
+				.smi-modal .menu-item:hover {
+					color: #8f9aa5;
+				}
+				
+				.smi-modal .menu-item.div {
+					background-image: url(/img/glyph/menu-bar-div.png);
+					background-position: right;
+					background-repeat: no-repeat;
+				}
+				
+				.smi-modal .menu-item.search {
+					position: relative;
+				}
+				
+					.smi-modal .menu-item.search:after {
+						content: "\e01c";
+						font-family: "icomoon";
+						font-size: 12px;
+						position: absolute;
+						right: 20px;
+						top: 1px;
+					}
+				
+				.smi-modal .menu-item .icon-arrow-down {
+					font-size: 12px;
+					margin-left: 6px;
+				}
+				
+				.smi-modal .menu-item i.danger {
+					color: #cb2f2f;
+				}
+				
+				.smi-modal .menu-item input[type="search"] {
+					background-color: #f1f3f2;
+					border: 1px solid #c9d0d6;
+					border-radius: 100px;
+					font-size: 10px;
+					line-height: 20px;
+					outline: none;
+					padding: 0 10px;
+				}
+		
+			.smi-modal .machine-status {
+				display: block;
+				float: left;
+			}
+			
+			.smi-modal .window-controls {
+				display: block;
+				float: right;
+			}
+		
+		.smi-modal .machine-info {
 			background-color: #2d343b;
 			background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(45, 52, 59)), to(rgb(30, 35, 39)));
 			background-image: -webkit-linear-gradient(top, rgb(45, 52, 59), rgb(30, 35, 39));
@@ -203,7 +400,7 @@
 			height: 90px;
 		}
 		
-		.smi-container--tab-control {
+		.smi-modal .tab-control {
 			background-color: #2d343b;
 			background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(45, 52, 59)), to(rgb(30, 35, 39)));
 			background-image: -webkit-linear-gradient(top, rgb(45, 52, 59), rgb(30, 35, 39));
@@ -217,7 +414,7 @@
 			height: 80px;
 		}
 		
-		.smi-container--tab-body {
+		.smi-modal .tab-body {
 			height: 350px;
 		}
 	
