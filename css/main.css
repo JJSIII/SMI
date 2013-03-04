@@ -345,8 +345,24 @@
 				}
 				
 				.smi-modal .menu-item.search {
+					outline: none;
 					position: relative;
 				}
+				
+					.smi-modal .menu-item.search input[type="search"] {
+						background-color: #f1f3f2;
+						border: 1px solid #c9d0d6;
+						border-radius: 100px;
+						font-size: 10px;
+						line-height: 20px;
+						outline: none;
+						padding: 0 10px;
+					}
+					
+						.smi-modal .menu-item.search input[type="search"]:focus {
+							border-color: rgba(82, 168, 236, 0.8);
+							box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+						}
 				
 					.smi-modal .menu-item.search:after {
 						content: "\e01c";
@@ -364,16 +380,6 @@
 				
 				.smi-modal .menu-item i.danger {
 					color: #cb2f2f;
-				}
-				
-				.smi-modal .menu-item input[type="search"] {
-					background-color: #f1f3f2;
-					border: 1px solid #c9d0d6;
-					border-radius: 100px;
-					font-size: 10px;
-					line-height: 20px;
-					outline: none;
-					padding: 0 10px;
 				}
 		
 			.smi-modal .machine-status {
