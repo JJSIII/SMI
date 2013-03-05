@@ -432,6 +432,7 @@
 						background-color: #f1f3f2;
 						border: 1px solid #c9d0d6;
 						border-radius: 20px;
+						box-shadow: 0 1px 0 #eff3f5;
 						color: #929ba3;
 						font-size: 10px;
 						height: 24px;
@@ -557,7 +558,7 @@
 			background-image: -ms-linear-gradient(top, #495359, #333c43);
 			background-image: linear-gradient(top, #495359, #333c43);
 			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#495359', EndColorStr='#333c43');
-			border-top: 1px solid #31383d;
+			border-top: 1px solid #2e343a;
 			box-shadow: inset 0 1px 0 #68717a, inset 0 0 21px rgba(0,0,0,.7), inset 0 -2px 0 #000;
 			text-align: center;
 		}
