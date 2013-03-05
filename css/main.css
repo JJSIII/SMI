@@ -443,6 +443,7 @@
 						-moz-transition: all .07s ease-in;
 						-webkit-transition: all .07s ease-in;
 						transition: all .07s ease-in;
+						vertical-align: top;
 					}
 					
 						.smi-modal .menu-item.search input[type="search"]:focus {
@@ -660,7 +661,7 @@
 				background-color: #f7fafc;
 				border: 1px solid #c8cfd6;
 				border-radius: 6px;
-				box-shadow: 0 1px 2px rgba(5,6,6,.1);
+				box-shadow: 0 1px 1px rgba(5,6,6,.1);
 				box-sizing: border-box;
 				display: inline-block;
 				margin: 10px;
