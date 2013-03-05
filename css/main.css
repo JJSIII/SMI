@@ -196,6 +196,7 @@
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	    font-size: 1em;
 	    line-height: 1.4;
 	}
@@ -326,7 +327,7 @@
 
 /* @group UI Objects */
 
-	.horizontal-navigation {
+	.horizontal {
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
@@ -336,13 +337,15 @@
 		padding: 0;
 	}
 	
-	.horizontal-navigation li {
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-		display: table-cell;
-		margin: 0;
-	}
+		.horizontal li {
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			display: table-cell;
+			margin: 0;
+			overflow: hidden;
+			vertical-align: middle;
+		}
 
 /* @end */
 
@@ -543,7 +546,7 @@
 	
 	/* @group Machine Info */
 	
-		.smi-modal .machine-info {
+		.machine-info {
 			background-color: #2d343b;
 			background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(45, 52, 59)), to(rgb(30, 35, 39)));
 			background-image: -webkit-linear-gradient(top, rgb(45, 52, 59), rgb(30, 35, 39));
@@ -554,8 +557,64 @@
 			filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#2d343b', EndColorStr='#1e2327');
 			border-top: 1px solid #333;
 			box-shadow: inset 0 -2px 0 #8ac640, inset 0 -3px 0 #befc72, inset 0 -4px 0 #000, inset 0 1px 0 #555, inset 0 0 21px rgba(0,0,0,.7);
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
 			height: 90px;
-	}
+			padding: 0 20px;
+			text-shadow: 0 -1px 0 #000;
+		}
+	
+			.machine-info h1 {
+				color: #bbc6cf;
+				font-size: 16px;
+				font-weight: normal;
+				margin-bottom: 4px;
+				margin-top: 8px;
+			}
+			
+			.machine-audit {
+				display: block;
+				height: 40px;
+				overflow: hidden;
+			}
+			
+				.machine-audit li {
+					background-image: url(/img/glyph/machine-audit-div.png);
+					background-position: right;
+					background-repeat: no-repeat;
+					display: inline-block;
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+				
+					.machine-audit li:first-child {
+						padding-left: 0;
+					}
+				
+				.machine-audit h2 {
+					color: #7a8b9c;
+					font-size: 10px;
+					line-height: 1em;
+					margin: 0;
+					text-transform: uppercase;
+				}
+				
+				.machine-audit span {
+					color: #a7b0b9;
+					font-size: 12px;
+					line-height: 1em;
+					margin: 0;
+				}
+				
+				.machine-audit .os-icon {
+					color: #4f6171;
+					font-size: 32px;
+				}
+			
+		@media (min-width: 600px) {
+		
+		}
 	
 	/* @end */
 	
@@ -667,7 +726,7 @@
 	/* @group Tab Body */
 	
 		.smi-modal .tab-body {
-			box-shadow: inset 0 10px 0 #e6eaed, inset 0 11px 0 #cad0d2, 0 -1px 0 #edf1f4;
+			box-shadow: inset 0 9px 0 #e6eaed, inset 0 10px 0 #cad0d2, 0 -1px 0 #edf1f4;
 		}
 		
 		.smi-modal .dashboard {
