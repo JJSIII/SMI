@@ -35,109 +35,114 @@
 	you can use the generic selector below, but it's slower:
 	[class*="icon-"]:before {
 	*/
-	.icon-pushpin:before, .icon-windows8:before, .icon-windows:before, .icon-dashboard:before, .icon-flag:before, .icon-star:before, .icon-warning:before, .icon-info:before, .icon-checkmark-circle:before, .icon-cancel-circle:before, .icon-close:before, .icon-plus:before, .icon-ticket:before, .icon-cog:before, .icon-cogs:before, .icon-alarm:before, .icon-list:before, .icon-wrench:before, .icon-user:before, .icon-calendar:before, .icon-arrow-down:before, .icon-arrow-left:before, .icon-arrow-right:before, .icon-arrow-up:before, .icon-checkmark:before, .icon-minus:before, .icon-tags:before, .icon-new-tab:before, .icon-search:before, .icon-power:before, .icon-envelop:before, .icon-phone:before {
+	.icon-pushpin:before, .icon-windows8:before, .icon-windows:before, .icon-dashboard:before, .icon-flag:before, .icon-star:before, .icon-warning:before, .icon-info:before, .icon-checkmark-circle:before, .icon-cancel-circle:before, .icon-close:before, .icon-plus:before, .icon-ticket:before, .icon-cog:before, .icon-cogs:before, .icon-alarm:before, .icon-list:before, .icon-wrench:before, .icon-user:before, .icon-calendar:before, .icon-arrow-down:before, .icon-arrow-left:before, .icon-arrow-right:before, .icon-arrow-up:before, .icon-checkmark:before, .icon-minus:before, .icon-tags:before, .icon-new-tab:before, .icon-search:before, .icon-power:before, .icon-envelop:before, .icon-phone:before, .icon-tools:before {
 		font-family: 'icomoon';
 		speak: none;
 		font-style: normal;
 		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
 		line-height: 1;
 		-webkit-font-smoothing: antialiased;
 	}
 	.icon-pushpin:before {
-		content: "\e000";
+		content: "\21";
 	}
 	.icon-windows8:before {
-		content: "\e001";
+		content: "\22";
 	}
 	.icon-windows:before {
-		content: "\e002";
+		content: "\23";
 	}
 	.icon-dashboard:before {
-		content: "\e003";
+		content: "\24";
 	}
 	.icon-flag:before {
-		content: "\e004";
+		content: "\25";
 	}
 	.icon-star:before {
-		content: "\e005";
+		content: "\26";
 	}
 	.icon-warning:before {
-		content: "\e006";
+		content: "\27";
 	}
 	.icon-info:before {
-		content: "\e007";
+		content: "\28";
 	}
 	.icon-checkmark-circle:before {
-		content: "\e008";
+		content: "\29";
 	}
 	.icon-cancel-circle:before {
-		content: "\e009";
+		content: "\2a";
 	}
 	.icon-close:before {
-		content: "\e00a";
+		content: "\2b";
 	}
 	.icon-plus:before {
-		content: "\e00b";
+		content: "\2c";
 	}
 	.icon-ticket:before {
-		content: "\e00c";
+		content: "\2d";
 	}
 	.icon-cog:before {
-		content: "\e00d";
+		content: "\2e";
 	}
 	.icon-cogs:before {
-		content: "\e00e";
+		content: "\2f";
 	}
 	.icon-alarm:before {
-		content: "\e00f";
+		content: "\30";
 	}
 	.icon-list:before {
-		content: "\e010";
+		content: "\31";
 	}
 	.icon-wrench:before {
-		content: "\e011";
+		content: "\32";
 	}
 	.icon-user:before {
-		content: "\e012";
+		content: "\33";
 	}
 	.icon-calendar:before {
-		content: "\e013";
+		content: "\34";
 	}
 	.icon-arrow-down:before {
-		content: "\e014";
+		content: "\35";
 	}
 	.icon-arrow-left:before {
-		content: "\e015";
+		content: "\36";
 	}
 	.icon-arrow-right:before {
-		content: "\e016";
+		content: "\37";
 	}
 	.icon-arrow-up:before {
-		content: "\e017";
+		content: "\38";
 	}
 	.icon-checkmark:before {
-		content: "\e018";
+		content: "\39";
 	}
 	.icon-minus:before {
-		content: "\e019";
+		content: "\3a";
 	}
 	.icon-tags:before {
-		content: "\e01a";
+		content: "\3b";
 	}
 	.icon-new-tab:before {
-		content: "\e01b";
+		content: "\3c";
 	}
 	.icon-search:before {
-		content: "\e01c";
+		content: "\3d";
 	}
 	.icon-power:before {
-		content: "\e01d";
+		content: "\3e";
 	}
 	.icon-envelop:before {
-		content: "\e01e";
+		content: "\3f";
 	}
 	.icon-phone:before {
-		content: "\e01f";
+		content: "\40";
+	}
+	.icon-tools:before {
+		content: "\41";
 	}
 	
 
@@ -368,6 +373,7 @@
 		
 		.smi-modal {
 			-webkit-background-clip: padding-box;
+			background-clip: padding-box;
 			border-radius: 6px;
 			box-shadow: 0 20px 40px rgba(0,0,0,.7);
 			margin: 0 auto;
@@ -592,6 +598,8 @@
 					}
 				
 					.section-tabs li.active a {
+						-webkit-background-clip: padding-box;
+						background-clip: padding-box;
 						box-sizing: border-box;
 						background-color: #e7ecef;
 						background-image: -webkit-gradient(linear, left top, left bottom, from(#e7ecef), to(#e1e7e9));
@@ -600,7 +608,6 @@
 						background-image: -o-linear-gradient(top, #e7ecef, #e1e7e9);
 						background-image: -ms-linear-gradient(top, #e7ecef, #e1e7e9);
 						background-image: linear-gradient(top, #e7ecef, #e1e7e9);
-						cursor: default;
 						filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#e7ecef', EndColorStr='#e1e7e9');
 						border-left: 1px solid #bcc1c4;
 						border-right: 1px solid #bcc1c4;
@@ -608,6 +615,8 @@
 						border-top-left-radius: 6px;
 						border-top-right-radius: 6px;
 						color: #2e343a;
+						cursor: default;
+						overflow: hidden;
 					}
 					
 						.section-tabs li.active a i {
@@ -653,12 +662,13 @@
 		
 		.smi-modal .dashboard {
 			font-size: 0;
-			padding: 20px;
+			padding: 30px 20px 20px 20px;
 			text-align: center;
 		}
 		
 			.smi-modal .dashlet {
 				-webkit-background-clip: padding-box;
+				background-clip: padding-box;
 				background-color: #f7fafc;
 				border: 1px solid #c8cfd6;
 				border-radius: 6px;
