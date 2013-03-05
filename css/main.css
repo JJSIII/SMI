@@ -327,6 +327,8 @@
 /* @group UI Objects */
 
 	.horizontal-navigation {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
 		display: table;
 		margin: 0;
@@ -334,6 +336,8 @@
 	}
 	
 	.horizontal-navigation li {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
 		display: table-cell;
 		margin: 0;
@@ -348,7 +352,7 @@
 	/* @group Frame */
 
 	.smi-mask {
-		background-color: rgba(0,0,0,.5);
+		background-image: url(/img/mask-bg.png);
 		bottom: 0;
 		left: 0;
 		position: absolute;
@@ -359,6 +363,8 @@
 
 	.smi-modal {
 		background-color: #f1f3f2;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
 		overflow: hidden;
 	}
@@ -447,9 +453,9 @@
 						padding: 0 26px 0 10px;
 						position: relative;
 						width: 90px;
-						-moz-transition: all .07s ease-in;
-						-webkit-transition: all .07s ease-in;
-						transition: all .07s ease-in;
+						-moz-transition: width .07s ease-in;
+						-webkit-transition: width .07s ease-in;
+						transition: width .07s ease-in;
 						vertical-align: top;
 					}
 					
@@ -460,7 +466,7 @@
 						}
 				
 					.smi-modal .menu-item.search:after {
-						content: "\e01c";
+						content: "=";
 						font-family: "icomoon";
 						font-size: 12px;
 						line-height: 12px;
@@ -580,6 +586,8 @@
 				}
 				
 					.section-tabs li a {
+						-moz-box-sizing: border-box;
+						-webkit-box-sizing: border-box;
 						box-sizing: border-box;
 						color: #afb8c0;
 						cursor: pointer;
@@ -600,6 +608,8 @@
 					.section-tabs li.active a {
 						-webkit-background-clip: padding-box;
 						background-clip: padding-box;
+						-moz-box-sizing: border-box;
+						-webkit-box-sizing: border-box;
 						box-sizing: border-box;
 						background-color: #e7ecef;
 						background-image: -webkit-gradient(linear, left top, left bottom, from(#e7ecef), to(#e1e7e9));
@@ -616,7 +626,6 @@
 						border-top-right-radius: 6px;
 						color: #2e343a;
 						cursor: default;
-						overflow: hidden;
 					}
 					
 						.section-tabs li.active a i {
@@ -673,6 +682,8 @@
 				border: 1px solid #c8cfd6;
 				border-radius: 6px;
 				box-shadow: 0 1px 1px rgba(5,6,6,.1);
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
 				box-sizing: border-box;
 				display: inline-block;
 				margin: 10px;
