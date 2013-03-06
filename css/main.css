@@ -534,8 +534,7 @@
 				}
 				
 				.smi-modal .menu-item i {
-					position: relative;
-					top: 2px;
+					vertical-align: middle;
 				}
 				
 				.smi-modal .menu-item.div {
@@ -590,7 +589,6 @@
 				
 				.smi-modal .menu-item.admin-message .icon-arrow-down, .smi-modal .menu-item.close-window .icon-close {
 					font-size: 12px;
-					top: 1px;
 				}
 				
 				.smi-modal .menu-item .icon-arrow-down {
