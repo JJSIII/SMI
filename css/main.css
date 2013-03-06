@@ -327,12 +327,7 @@
 
 /* @group UI Objects */
 	
-	.btn, .btn:link, .btn:visited, .btn:hover, .btn:active, .btn:focus {
-		color: #666;
-		text-decoration: none;
-	}
-	
-	.btn {
+	.btn, .btn:link, .btn:visited {
 		background-color: #fafbfa;
 		background-image: -moz-linear-gradient(top, rgb(250, 251, 250), rgb(221, 221, 221));
 		background-image: -ms-linear-gradient(top, rgb(250, 251, 250), rgb(221, 221, 221));
@@ -343,6 +338,7 @@
 		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#fafbfa', EndColorStr='#dddddd');
 		background-repeat: no-repeat;
 		border-radius: 4px;
+		color: #666;
 		cursor: pointer;
 		display: inline-block;
 		font-size: 13px;
@@ -350,6 +346,7 @@
 		line-height: 1.3em;
 		padding: 6px 14px;
 		text-align: center;
+		text-decoration: none;
 		text-shadow: 0 1px 0 rgba(255,255,255, 0.5);
 		-webkit-user-select: none;
 		-khtml-user-select: none;
@@ -359,9 +356,9 @@
 		white-space: nowrap;
 	}
 	
-	.btn:hover {
-		
-	}
+		.btn:hover, .btn:active, .btn:focus {
+			color: #222;
+		}
 	
 	.btn.primary {	
 		background-color: #92ca4d;
@@ -376,20 +373,15 @@
 		text-shadow: 0 -1px 0 rgba(0,0,0, 0.3);
 	}
 	
+		.btn.primary:hover {
+			color: #fff;
+		}
+	
 	.btn.disabled {
 		background-image: none;
 		background-color: #b2b2b2;
 		color: #eee;
 		pointer-events: none;
-	}
-	
-	.btn:active, .btn:focus, .btn.selected, .btn.selected:hover {
-		color: #333;
-	}
-	
-	.btn.primary:active, .btn.primary:focus, .btn.primary.selected {
-		border-color: #6fa331;
-		color: #fff;
 	}
 	
 	.btn.selected, .btn.selected:hover {
@@ -730,14 +722,16 @@
 				
 			.machine-actions {
 				font-size: 0;
-				padding: 20px 0;
+				padding: 12px 0 16px 0;
 				text-align: center;
 			}
 			
 				.machine-actions .btn {
 					font-size: 11px;
+					padding-right: 22px;
+					position: relative;
+					text-align: left;
 					text-transform: uppercase;
-					width: 100px;
 				}
 				
 					.machine-actions .btn.primary {
@@ -749,8 +743,10 @@
 					}
 				
 					.machine-actions .btn i {
-						float: right;
 						font-size: 9px;
+						margin-top: 1px;
+						position: absolute;
+						right: 7px;
 					}
 			
 		@media (min-width: 600px) {
@@ -763,20 +759,19 @@
 			.machine-actions {
 				display: table-cell;
 				padding: 0;
-				position: relative;
 				text-align: right;
-				top: 10px;
+				vertical-align: top;
 				width: 120px;
 			}
 			
 				.machine-actions .btn {
 					display: block;
 					margin: 0;
-					text-align: left;
 				}
 				
 				.machine-actions .btn.primary {
 					border-radius: 4px 4px 0 0;
+					margin-top: 16px;
 				}
 				
 				.machine-actions .btn.secondary {
