@@ -728,7 +728,7 @@
 			
 				.machine-actions .btn {
 					font-size: 11px;
-					padding-right: 22px;
+					padding-right: 24px;
 					position: relative;
 					text-align: left;
 					text-transform: uppercase;
@@ -759,9 +759,7 @@
 			.machine-actions {
 				display: table-cell;
 				padding: 0;
-				text-align: right;
 				vertical-align: top;
-				width: 120px;
 			}
 			
 				.machine-actions .btn {
