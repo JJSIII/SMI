@@ -38,8 +38,27 @@
 $(document).ready(function() {
 
 	// menu-bar tooltips
-	$(".menu-bar a").tipper({
+	$('.menu-bar a').tipper({
 		direction: "bottom"
+	});
+	
+	// build audit list
+	var auditMarkup = $('.machine-audit .popover-arrow').attr('data-load');
+	$.get(auditMarkup, function(data){
+		$('.machine-audit > h1').after(data);
+	});
+		
+	// popovers
+	$('.popover-arrow').each(function() {
+		var el=$(this);
+		$.get(el.attr('data-load'),function(d) {
+			el.clickover( {
+				content: d,
+				html: true,
+				placement: 'bottom',
+				template: '<div class="popover"><div class="arrow"></div><div class="popover-content"></div></div>'
+			});
+		});
 	});
 
 });
