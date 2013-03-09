@@ -35,13 +35,17 @@
 })( this );
 
 
+// when the document is loaded be fucking fantastic
+//*************************************************************
+
 $(document).ready(function() {
 
 	// menu-bar tooltips
-	$('.menu-bar a').tipper({
-		direction: "bottom"
-	});
-	
+	if(Modernizr.mq('(min-width: 768px)')) {
+		$('.menu-bar a').tipper({
+			direction: 'bottom'
+		});
+	}
 	// build audit list
 	var auditMarkup = $('.machine-audit .popover-arrow').attr('data-load');
 	$.get(auditMarkup, function(data){
@@ -49,16 +53,62 @@ $(document).ready(function() {
 	});
 		
 	// popovers
-	$('.popover-arrow').each(function() {
-		var el=$(this);
-		$.get(el.attr('data-load'),function(d) {
-			el.clickover( {
-				content: d,
-				html: true,
-				placement: 'bottom',
-				template: '<div class="popover"><div class="arrow"></div><div class="popover-content"></div></div>'
+	var popoverOpen = false;
+	var createPopover = function(target, position) {
+	
+		// if popover is not open create a new popover
+		if(popoverOpen === false) {
+			var popoverTemplate = '<div class="popover"><div class="popover-content"></div></div>';
+			
+			// inject popover markup to body
+			$('.smi-modal').append(popoverTemplate);
+			
+			var popover = $('.popover');
+			
+			// grab html from snippet residing in target's data-load attribute and inject into popover
+			$.get($(target).attr('data-load'), function(data){
+				popover.find('.popover-content').html(data);
+				// position popover relative to target and depending on left or right
+				popover.position({
+					my: position + ' top',
+					at: position + ' bottom',
+					of: $(target),
+					collision: 'flipfit'
+				});
+				$('.popover').click(function(event) {
+					event.stopPropagation();
+				});
 			});
-		});
+			
+			// show popover
+			popover.fadeIn(100);
+			popoverOpen = true;
+		}
+		
+		else {
+			removePopovers();
+		}
+	};
+	
+	var removePopovers = function() {
+		$('.popover').remove();
+		popoverOpen = false;
+	};
+	
+	// create popover
+	$('.popover-arrow').click(function(event) {
+		createPopover(this, 'left');
+		event.stopPropagation();
 	});
-
+	
+	// remove popover when someone clicks outside of it
+	$('html').click(function() {
+		removePopovers();
+	});
+	
+	// remove popover when window is resized
+	$(window).resize(function() {
+		removePopovers();
+	});
+	
 });

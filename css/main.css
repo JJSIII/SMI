@@ -349,10 +349,8 @@
 		text-align: center;
 		text-decoration: none;
 		text-shadow: 0 1px 0 rgba(255,255,255, 0.5);
-		-webkit-user-select: none;
-		-khtml-user-select: none;
 		-moz-user-select: none;
-		-ms-user-select: none;
+		-webkit-user-select: none;
 		user-select: none;
 		white-space: nowrap;
 	}
@@ -450,130 +448,30 @@
 		}
 		
 	.popover {
-		color: #2e343a;
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 1010;
-		display: none;
-		padding: 1px;
-		text-align: left;
-		white-space: normal;
-		background-color: #f0f3f5;
-		-webkit-border-radius: 4px;
-		-moz-border-radius: 4px;
-		border-radius: 4px;
-		-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-		-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 		-webkit-background-clip: padding-box;
 		-moz-background-clip: padding;
 		background-clip: padding-box;
+		background-color: #f0f3f5;
+		border-radius: 4px;
+		-webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+		-moz-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+		color: #2e343a;
+		display: none;
+		left: 0;
+		padding: 0;
+		position: absolute;
+		text-align: left;
+		top: 0;
+		white-space: normal;
+		z-index: 1010;
 	}
-	
-	.popover.top {
-		margin-top: -10px;
-	}
-	
-	.popover.right {
-		margin-left: 10px;
-	}
-	
-	.popover.bottom {
-		margin-top: 10px;
-	}
-	
-	.popover.left {
-		margin-left: -10px;
-	}
-	
+		
 	.popover-content {
 		font-size: 11px;
 		padding: 10px 15px;
 	}
-	
-	.popover .arrow, .popover .arrow:after {
-		position: absolute;
-		display: block;
-		width: 0;
-		height: 0;
-		border-color: transparent;
-		border-style: solid;
-	}
-	
-	.popover .arrow {
-		border-width: 11px;
-	}
-	
-	.popover .arrow:after {
-		border-width: 10px;
-		content: "";
-	}
-	
-	.popover.top .arrow {
-		bottom: -11px;
-		left: 50%;
-		margin-left: -11px;
-		border-top-color: #999;
-		border-top-color: rgba(0, 0, 0, 0.25);
-		border-bottom-width: 0;
-	}
-	
-	.popover.top .arrow:after {
-		bottom: 1px;
-		margin-left: -10px;
-		border-top-color: #f0f3f5;
-		border-bottom-width: 0;
-	}
-	
-	.popover.right .arrow {
-		top: 50%;
-		left: -11px;
-		margin-top: -11px;
-		border-right-color: #999;
-		border-right-color: rgba(0, 0, 0, 0.25);
-		border-left-width: 0;
-	}
-	
-	.popover.right .arrow:after {
-		bottom: -10px;
-		left: 1px;
-		border-right-color: #f0f3f5;
-		border-left-width: 0;
-	}
-	
-	.popover.bottom .arrow {
-		top: -11px;
-		left: 50%;
-		margin-left: -11px;
-		border-bottom-color: #999;
-		border-bottom-color: rgba(0, 0, 0, 0.25);
-		border-top-width: 0;
-	}
-	
-	.popover.bottom .arrow:after {
-		top: 1px;
-		margin-left: -10px;
-		border-bottom-color: #f0f3f5;
-		border-top-width: 0;
-	}
-	
-	.popover.left .arrow {
-		top: 50%;
-		right: -11px;
-		margin-top: -11px;
-		border-left-color: #999;
-		border-left-color: rgba(0, 0, 0, 0.25);
-		border-right-width: 0;
-	}
-	
-	.popover.left .arrow:after {
-		right: 1px;
-		bottom: -10px;
-		border-left-color: #f0f3f5;
-		border-right-width: 0;
-	}
-	
+		
 		.popover ul	{
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
@@ -606,21 +504,21 @@
 					text-overflow: ellipsis;
 					text-transform: capitalize;
 					white-space: nowrap;
-					width: 120px;
+					width: 100px;
 				}
 				
 				.popover li .value {
 					display: inline-block;
-					max-width: 250px;
+					max-width: 180px;
 					overflow: hidden;
 					text-overflow: ellipsis;
 					text-transform: capitalize;
 					white-space: nowrap;
 				}
-				
-				.popover li.os i {
-					display: none;
-				}
+			
+			.popover li.os i {
+				display: none;
+			}
 
 /* @end */
 
@@ -841,10 +739,9 @@
 			min-height: 90px;
 			padding: 0 20px;
 			position: relative;
-			-webkit-user-select: none;
-			-khtml-user-select: none;
 			-moz-user-select: none;
-			-ms-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
 			vertical-align: top;
 		}
 			
@@ -878,8 +775,8 @@
 					background-position: right;
 					background-repeat: no-repeat;
 					display: inline-block;
-					padding-left: 12px;
-					padding-right: 12px;
+					padding-left: 10px;
+					padding-right: 10px;
 				}
 				
 					.machine-audit > ul li:first-child {
@@ -1029,6 +926,9 @@
 			border-top: 1px solid #2e343a;
 			box-shadow: inset 0 1px 0 #68717a, inset 0 0 21px rgba(0,0,0,.7), inset 0 -2px 0 #000;
 			text-align: center;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
 		}
 		
 			.section-tabs ul {
