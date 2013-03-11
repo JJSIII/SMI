@@ -1,3 +1,5 @@
+/*global Modernizr */
+
 // hide address bar
 //*************************************************************
 (function( win ){
