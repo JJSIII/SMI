@@ -78,11 +78,10 @@ $(document).ready(function() {
 				$('.popover').click(function(event) {
 					event.stopPropagation();
 				});
+				// show popover
+				popover.fadeIn(100);
+				popoverOpen = true;
 			});
-			
-			// show popover
-			popover.fadeIn(100);
-			popoverOpen = true;
 		}
 		
 		else {
@@ -109,6 +108,20 @@ $(document).ready(function() {
 	// remove popover when window is resized
 	$(window).resize(function() {
 		removePopovers();
+	});
+	
+	// tabs
+	// when (not active) tab is clicked, get its index, hide all tab bodies, find tab body with the same index and show it
+	var sectionTabs = $('.section-tabs');
+	var sectionTabBodies = $('.tab-body > div');
+	
+	$(sectionTabs).find('a').not('.active').click(function() {
+		var activeTab = $(this).parent();
+		var index = $(sectionTabs).find('li').index(activeTab);
+		$(sectionTabs).find('li').removeClass('active');
+		activeTab.addClass('active');
+		sectionTabBodies.removeClass('active');
+		sectionTabBodies.eq(index).addClass('active');
 	});
 	
 });
