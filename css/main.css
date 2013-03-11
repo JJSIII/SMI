@@ -157,7 +157,7 @@
 	.tipper-positioner { left: -99999px; position: absolute; pointer-events: none; top: -99999px; z-index: 101; }
 	.tipper-positioner .tipper-wrapper { position: relative; }
 	.tipper-positioner .tipper-content { background: rgba(0, 0, 0, 0.85); border-radius: 3px; color: #fff; display: block; font-size: 10px; margin: 0; padding: 8px 12px; white-space: nowrap; }
-	.tipper-positioner .tipper-caret { background: url(/img/libs/fs-tipper-icons.png) no-repeat; display: block; height: 11px; margin: 0; overflow: hidden; position: absolute; width: 5px; }
+	.tipper-positioner .tipper-caret { background: url(/images/libs/fs-tipper-icons.png) no-repeat; display: block; height: 11px; margin: 0; overflow: hidden; position: absolute; width: 5px; }
 	
 	.tipper-positioner.right { box-shadow: 1px 0 3px rgba(0, 0, 0, 0.25); }
 	.tipper-positioner.right .tipper-caret { background-position: left center; left: -5px; top: 0; }
@@ -191,7 +191,7 @@
 	}
 	
 	body {
-		background: url(/img/bg.jpg) no-repeat center center fixed; 
+		background: url(/images/bg.jpg) no-repeat center center fixed; 
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
@@ -529,7 +529,7 @@
 	/* @group Frame */
 
 	.smi-mask {
-		background-image: url(/img/mask-bg.png);
+		background-image: url(/images/mask-bg.png);
 		bottom: 0;
 		left: 0;
 		position: absolute;
@@ -610,7 +610,7 @@
 				}
 				
 				.smi-modal .menu-item.div {
-					background-image: url(/img/glyph/menu-bar-div.png);
+					background-image: url(/images/glyph/menu-bar-div.png);
 					background-position: right;
 					background-repeat: no-repeat;
 				}
@@ -709,7 +709,7 @@
 			}
 			
 			.smi-modal .menu-item.preferences {
-				background-image: url(/img/glyph/menu-bar-div.png);
+				background-image: url(/images/glyph/menu-bar-div.png);
 				background-position: right;
 				background-repeat: no-repeat;
 			}
@@ -771,7 +771,7 @@
 			}
 			
 				.machine-audit > ul li {
-					background-image: url(/img/glyph/machine-audit-div.png);
+					background-image: url(/images/glyph/machine-audit-div.png);
 					background-position: right;
 					background-repeat: no-repeat;
 					display: inline-block;
