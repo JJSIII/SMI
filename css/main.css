@@ -1071,6 +1071,9 @@
 			font-size: 0;
 			padding: 20px;
 			text-align: center;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
 		}
 		
 			.smi-modal .dashlet {
@@ -1095,6 +1098,7 @@
 			-moz-user-select: none;
 			-webkit-user-select: none;
 			user-select: none;
+			vertical-align: top;
 		}
 		
 			.local-nav-items ul {
@@ -1142,6 +1146,7 @@
 			color: #4d5760;
 			display: table-cell;
 			font-size: 11px;
+			vertical-align: top;
 			width: 100%;
 		}
 		
