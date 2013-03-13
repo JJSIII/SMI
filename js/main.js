@@ -50,6 +50,10 @@ $(document).ready(function() {
 	}
 	// build audit list
 	var auditMarkup = $('.machine-audit .popover-arrow').attr('data-load');
+	
+	// prevent async caching issues
+	$.ajaxSetup({ cache: false });
+	
 	$.get(auditMarkup, function(data){
 		$('.machine-audit > h1').after(data);
 	});
