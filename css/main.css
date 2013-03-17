@@ -202,6 +202,14 @@
 	    line-height: 1.4;
 	}
 	
+	a:link, a:visited {
+		color: #005d9a;
+	}
+	
+	a:hover, a:active {
+		color: #0072bc;
+	}
+	
 	::-moz-selection {
 	    background: #b3d4fc;
 	    text-shadow: none;
@@ -520,6 +528,11 @@
 				white-space: nowrap;
 			}
 			
+				.popover li a {
+					color: #005d9a;
+					cursor: pointer;
+				}
+			
 				.popover li:first-child {
 					border-top: none;
 				}
@@ -547,6 +560,10 @@
 			.popover li.os i {
 				display: none;
 			}
+			
+	@media (min-width: 600px) {
+	
+	}
 
 /* @end */
 
@@ -588,7 +605,6 @@
 			border-radius: 6px;
 			box-shadow: 0 20px 40px rgba(0,0,0,.7);
 			margin: 0 auto;
-			max-width: 740px;
 		}
 
 	}
@@ -788,7 +804,7 @@
 			
 			.machine-audit > ul {
 				display: block;
-				height: 40px;
+				height: 44px;
 				list-style: none;
 				margin: 0;
 				padding: 0;
@@ -803,12 +819,20 @@
 					background-position: right;
 					background-repeat: no-repeat;
 					display: inline-block;
+					height: 44px;
 					padding-left: 10px;
 					padding-right: 10px;
 				}
 				
 					.machine-audit > ul li:first-child {
 						padding-left: 0;
+					}
+					
+					.machine-audit > ul span {
+						max-width: 120px;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
 					}
 				
 					.machine-audit > ul span.label {
@@ -822,6 +846,7 @@
 					
 					.machine-audit > ul span.value {
 						color: #a7b0b9;
+						display: inline-block;
 						font-size: 12px;
 						line-height: 1em;
 						margin: 0;

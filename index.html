@@ -10,9 +10,9 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 		
-		<link rel="stylesheet" href="/css/main.css">
+		<link href="/css/main.css" rel="stylesheet">
 		
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 		
 		<script src="/js/libs/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		
@@ -55,9 +55,7 @@
 				
 						<h1>av-reports.root.kserver</h1>
 						
-						<!-- INSERT LIST HERE -->
-						
-						<a class="popover-arrow" data-load="/snippets/popover-smi-audit.html">&#187;</a>
+						<a class="popover-arrow">&#187;</a>
 					
 					</div>
 					
@@ -335,7 +333,13 @@
 		</div>
 		
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/libs/jquery-1.9.1.min.js"><\/script>')</script>
+		
+		<script>
+		
+			var guid = '@ViewBag.guid';
+			var agentGuid = '@ViewBag.agentGuid';
+		
+		</script>
 		
 		<script src="/js/main.js"></script>
 	</body>

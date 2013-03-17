@@ -60,11 +60,11 @@ $(document).ready(function() {
 
 	// build audit list
 	//*************************************************************
-	var auditMarkup = $('.machine-audit .popover-arrow').attr('data-load');
-
-	$.get(auditMarkup, function(data){
-		$('.machine-audit > h1').after(data);
-	});
+//	var auditMarkup = $('.machine-audit .popover-arrow').attr('data-load');
+//
+//	$.get(auditMarkup, function(data){
+//		$('.machine-audit > h1').after(data);
+//	});
 
 	// popovers
 	//*************************************************************
@@ -113,16 +113,6 @@ $(document).ready(function() {
 		$('.popover').remove();
 	};
 
-	// audit overflow arrow popover
-	$('.popover-arrow').click(function(event) {
-		var el = $(this);
-		// grab html from snippet residing in target's data-load attribute and inject into popover
-		$.get(el.attr('data-load'), function(data) {
-			createPopover(el,'left',data);
-		});
-		event.stopPropagation();
-	});
-
 	// remove popover when someone clicks outside of it
 	$('html').click(function() {
 		removePopovers();
@@ -163,7 +153,7 @@ $(document).ready(function() {
 		// when active option is clicked, show popover appended with list of options, then on click of option, change active option and optionBody
 		var optionItems = $(options).children('ul').find('li');
 		var optionBodyItems = $(optionBodies).children('div');
-		$(optionItems).filter('.active').find('a').click(function() {
+		$(optionItems).filter('.active').find('a').click(function(event) {
 			createPopover(this,'left',popoverContent);
 			event.stopPropagation();
 		});
@@ -181,5 +171,41 @@ $(document).ready(function() {
 	else {
 		selectBehavior($('.local-nav-items'),$('.local-body'),$('.local-nav-items').html());
 	}
+	
+	// load machine audit data and popover
+	//*************************************************************
+	$.ajax({
+	    url: '/json/getMachineInfo.json',
+	    data: { agentGuid: agentGuid, columns: '' },
+	    dataType: 'json'
+	}).done(function (data) {
+	
+		var newItem = '';
+		var machineName = $('.machine-audit h1');
+		
+		$.each(data.Data, function () {
+			var label = this.Label;
+			var value = this.Value;
+			if (label.indexOf("req_") != -1) {
+				if (label == "req_displayName") {
+					machineName.html(value);
+				}
+			} else {
+				newItem += '<li><span class="label">' + label + '</span><span class="value">' + value + '</span></li>';
+			}
+		});
+		
+		newItem = '<ul>' + newItem + '</ul>';
+		
+		// inject list after machine name h1
+		machineName.after(newItem);
+		
+		// audit overflow arrow popover
+		$('.popover-arrow').click(function(event) {
+			createPopover($(this),'left',newItem);
+			event.stopPropagation();
+		});
+		
+	});
 
 });
