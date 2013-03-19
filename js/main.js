@@ -58,6 +58,11 @@ $(document).ready(function() {
 			direction: 'bottom'
 		});
 	}
+	
+	$('#popNewWindow').click(function () {
+	    //pop win
+	    window.open('/vsapres/quickview/main/quickview?agentGuid=' + agentGuid + '&selectScriptId=0&' + Math.random(), 'agentDash' + agentGuid);
+	});
 
 	// popovers
 	//*************************************************************
