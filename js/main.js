@@ -45,7 +45,9 @@ if(jQuery)(function(c){function n(a){e.formatter=p;return c(this).on("mouseenter
 	}
 })( this );
 
-// when the document is ready do something fucking fantastic
+
+
+// when the document is ready do something
 //*************************************************************
 
 $(document).ready(function() {
@@ -57,14 +59,6 @@ $(document).ready(function() {
 			direction: 'bottom'
 		});
 	}
-
-	// build audit list
-	//*************************************************************
-//	var auditMarkup = $('.machine-audit .popover-arrow').attr('data-load');
-//
-//	$.get(auditMarkup, function(data){
-//		$('.machine-audit > h1').after(data);
-//	});
 
 	// popovers
 	//*************************************************************
@@ -155,6 +149,15 @@ $(document).ready(function() {
 		var optionBodyItems = $(optionBodies).children('div');
 		$(optionItems).filter('.active').find('a').click(function(event) {
 			createPopover(this,'left',popoverContent);
+			// find anchor in popover and add click event
+			var popoverItems = $('.popover li');
+			popoverItems.find('a').click(function() {
+				// get index of clicked anchor
+				var index = popoverItems.index($(this).parent());
+				optionBodyItems.removeClass('active');
+				optionBodyItems.eq(index).addClass('active');
+				removePopovers();
+			});
 			event.stopPropagation();
 		});
 	};
