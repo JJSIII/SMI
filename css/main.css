@@ -1275,3 +1275,16 @@
 	
 	
 /* @end */
+
+
+/* @group Fringe Cases */
+
+/*.time-column { Revisit - trying to avoid adding in ad hoc classes and would rather handle it holistically
+	    vertical-align: text-top;
+	    text-align: left;
+	    width: 10%;
+	    white-space: nowrap;
+
+	}*/
+	
+/* @end */
