@@ -123,7 +123,42 @@
 				</div>
 				
 				<div class="alarms">
-					<p>Alarms</p>
+					<div class="local-nav-items">
+	                    <ul>
+	                        <li class="alarms"><a>Alarms</a></li>
+	                        <li class="monitorlog"><a>Monitor Log</a></li>
+	                    </ul>
+	                </div>
+                    
+                    <div class="local-body">
+					
+                        <div class="alarm-log active">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Alarm ID</th>
+                                        <th>Time</th>
+                                        <th>Event</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="alarmLog"></tbody>
+                            </table>
+                        </div>
+                        <div class="alarm-monitor-acton-log">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Time</th>
+                                        <th>SNMP Device</th>
+                                        <th>Type</th>
+                                        <th>Message</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="monitorActionLog"></tbody>
+                            </table>
+                        </div>
+
+                    </div>
 				</div>
 				
 				<div class="procedures">

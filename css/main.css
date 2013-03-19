@@ -605,6 +605,7 @@
 		
 			.smi-modal .menu-item {
 				color: #bcc4cc;
+				cursor: pointer;
 				display: block;
 				float: left;
 				font-size: 16px;
