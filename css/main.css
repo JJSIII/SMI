@@ -501,6 +501,8 @@
 	.popover-content {
 		font-size: 11px;
 		padding: 10px 15px;
+		max-height: 240px;
+		overflow: auto;
 	}
 		
 		.popover ul	{

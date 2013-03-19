@@ -39,6 +39,46 @@
 		{
 			"Label" : "req_displayName",
 			"Value" : "sb-rtd-dev.root.unnamed"
+		},
+		{
+			"Label" : "Current User",
+			"Value" : "Administrator"
+		},
+		{
+			"Label" : "Agent GUID",
+			"Value" : "738055611920404"
+		},
+		{
+			"Label" : "Machine ID",
+			"Value" : "sb-rtd-dev.root.unnamed"
+		},
+		{
+			"Label" : "Group ID",
+			"Value" : "unnamed.root"
+		},
+		{
+			"Label" : "Last Reboot Time",
+			"Value" : "3/13/2013 5:37:24 PM"
+		},
+		{
+			"Label" : "Last Checkin Time",
+			"Value" : "3/15/2013 2:50:28 PM"
+		},
+		{
+			"Label" : "First Checkin Time",
+			"Value" : "1/14/2013 1:23:51 PM"
+		},
+		{
+			"Label" : "req_onlineState",
+			"Value" : "1"
+		},
+		{
+			"Label" : "req_agentGuid",
+			"Value" : "738055611920404"
+		},
+		{
+			"Label" : "req_displayName",
+			"Value" : "sb-rtd-dev.root.unnamed"
 		}
 	],
 	"Total" : 42
