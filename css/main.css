@@ -502,7 +502,7 @@
 		font-size: 11px;
 		padding: 10px 15px;
 		max-height: 240px;
-		overflow: auto;
+		overflow-y: scroll;
 	}
 		
 		.popover ul	{

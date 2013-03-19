@@ -126,12 +126,18 @@ $(document).ready(function() {
 	// when (not active) tab is clicked, get its index, hide all tab bodies, find tab body with the same index and show it
 	var tabBehavior = function(tabs, tabBodies) {
 		var tabItems = $(tabs).children('ul').find('li');
-		var tabBodyItems = $(tabBodies).children('div');
+		var tabsClass = tabs.attr('class');
+		
 		tabItems.find('a').click(function() {
+			var thisTabs = $(this).closest('.' + tabsClass);
+			var thisTabItems = thisTabs.find('li');
+			var tabBodyItems = thisTabs.next().children('div');
 			var activeTab = $(this).parent();
+			
 			if(!$(activeTab).hasClass('active')) { //if this tab is not active
-				var index = tabItems.index(activeTab);
-				tabItems.removeClass('active');
+				var index = thisTabItems.index(activeTab);
+				
+				thisTabItems.removeClass('active');
 				activeTab.addClass('active');
 				tabBodyItems.removeClass('active');
 				tabBodyItems.eq(index).addClass('active');
@@ -147,17 +153,24 @@ $(document).ready(function() {
 	
 	// select menu
 	//*************************************************************
-	var selectBehavior = function(options, optionBodies, popoverContent) {
+	var selectBehavior = function(options, optionBodies) {
 		// when active option is clicked, show popover appended with list of options, then on click of option, change active option and optionBody
 		var optionItems = $(options).children('ul').find('li');
-		var optionBodyItems = $(optionBodies).children('div');
-		$(optionItems).filter('.active').find('a').click(function(event) {
-			createPopover(this,'left',popoverContent);
+		var optionsClass = options.attr('class');
+		
+		optionItems.find('a').click(function(event) {
+			var thisOptions = $(this).closest('.' + optionsClass);
+			var thisOptionItems = thisOptions.find('li');
+			var optionBodyItems = thisOptions.next().children('div');
+			createPopover(this,'left',thisOptions.html());
+			
 			// find anchor in popover and add click event
 			var popoverItems = $('.popover li');
 			popoverItems.find('a').click(function() {
 				// get index of clicked anchor
 				var index = popoverItems.index($(this).parent());
+				thisOptionItems.removeClass('active');
+				thisOptionItems.eq(index).addClass('active');
 				optionBodyItems.removeClass('active');
 				optionBodyItems.eq(index).addClass('active');
 				removePopovers();
@@ -176,7 +189,7 @@ $(document).ready(function() {
 		tabBehavior($('.local-nav-items'),$('.local-body'));
 	}
 	else {
-		selectBehavior($('.local-nav-items'),$('.local-body'),$('.local-nav-items').html());
+		selectBehavior($('.local-nav-items'),$('.local-body'));
 	}
 	
 	// load machine audit data and popover
