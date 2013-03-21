@@ -111,7 +111,10 @@ $(document).ready(function() {
 				axis: 'y',
 				placeholder: 'sortable-placeholder',
 				handle: '.popover-control-reorder',
-				revert: 100
+				revert: 100,
+				update: function(event, ui) {
+					alert('Save my state!');
+				}
 			});
 		}
 	};
