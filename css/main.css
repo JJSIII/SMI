@@ -35,7 +35,7 @@
 	you can use the generic selector below, but it's slower:
 	[class*="icon-"]:before {
 	*/
-	.icon-pushpin:before, .icon-windows8:before, .icon-windows:before, .icon-dashboard:before, .icon-flag:before, .icon-star:before, .icon-warning:before, .icon-info:before, .icon-checkmark-circle:before, .icon-cancel-circle:before, .icon-close:before, .icon-plus:before, .icon-ticket:before, .icon-cog:before, .icon-cogs:before, .icon-alarm:before, .icon-list:before, .icon-wrench:before, .icon-user:before, .icon-calendar:before, .icon-arrow-down:before, .icon-arrow-left:before, .icon-arrow-right:before, .icon-arrow-up:before, .icon-checkmark:before, .icon-minus:before, .icon-tags:before, .icon-new-tab:before, .icon-search:before, .icon-power:before, .icon-envelop:before, .icon-phone:before, .icon-tools:before {
+	.icon-pushpin, .icon-windows8, .icon-windows, .icon-dashboard, .icon-flag, .icon-star, .icon-warning, .icon-info, .icon-checkmark-circle, .icon-cancel-circle, .icon-close, .icon-plus, .icon-ticket, .icon-cog, .icon-cogs, .icon-alarm, .icon-list, .icon-wrench, .icon-user, .icon-calendar, .icon-arrow-down, .icon-arrow-left, .icon-arrow-right, .icon-arrow-up, .icon-checkmark, .icon-minus, .icon-tags, .icon-new-tab, .icon-search, .icon-power, .icon-envelop, .icon-phone, .icon-tools, .icon-menu {
 		font-family: 'icomoon';
 		speak: none;
 		font-style: normal;
@@ -143,6 +143,9 @@
 	}
 	.icon-tools:before {
 		content: "\41";
+	}
+	.icon-menu:before {
+		content: "\42";
 	}
 	
 
@@ -282,6 +285,7 @@
 		border-bottom: 1px solid #d0d5d9;
 		padding: 4px 10px;
 		text-align: left;
+		/*vertical-align: text-top; Commented out temporarily. Is text-top appropriate for ALL cell cases? Probably not: E.G. cells with icons in them instead of text. Will revisit once most of data is flowing into app and we have a better picture of layout bugs.*/
 	}
 	
 		td:first-child, th:first-child {
@@ -498,13 +502,6 @@
 		z-index: 1010;
 	}
 		
-	.popover-content {
-		font-size: 11px;
-		padding: 10px 15px;
-		max-height: 240px;
-		overflow-y: scroll;
-	}
-		
 		.popover ul	{
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
@@ -515,6 +512,7 @@
 		}
 		
 			.popover li {
+				background-color: #f0f3f5;
 				border-top: 1px solid #d0d5d9;
 				-moz-box-sizing: border-box;
 				-webkit-box-sizing: border-box;
@@ -522,6 +520,7 @@
 				height: 30px;
 				line-height: 30px;
 				position: relative;
+				vertical-align: middle;
 				white-space: nowrap;
 			}
 			
@@ -547,16 +546,63 @@
 				
 				.popover li .value {
 					display: inline-block;
-					max-width: 180px;
+					margin-right: 10px;
 					overflow: hidden;
 					text-overflow: ellipsis;
 					text-transform: capitalize;
+					vertical-align: top;
 					white-space: nowrap;
+					width: 180px;
 				}
+				
+				.popover li .popover-controls {
+					display: inline-block;
+					height: 30px;
+					vertical-align: top;
+				}
+				
+					.popover li .popover-controls a {
+						color: #dde1e5;
+						cursor: default;
+						display: inline-block;
+						font-size: 16px;
+						height: 30px;
+						text-align: center;
+						width: 30px;
+					}
+					
+						.popover li .popover-controls a:hover {
+							color: #c9ced2;
+						}
+				
+						.popover li a.popover-control-reorder:hover {	
+							cursor: ns-resize;
+						}
+						
+						.popover li.sortable-placeholder {
+							background-color: #f7fafc;
+						}
+						
+						.popover li.ui-sortable-helper {
+							border: 1px solid #d0d5d9;
+							box-shadow: 0 4px 8px rgba(0,0,0,.2);
+							cursor: ns-resize;
+						}
 			
 			.popover li.os i {
 				display: none;
 			}
+			
+		.popover-content {
+			font-size: 11px;
+			padding: 10px 15px;
+			max-height: 240px;
+			overflow-y: scroll;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
+		}
+		
 			
 	@media (min-width: 600px) {
 	
@@ -685,9 +731,9 @@
 					background-image: none;
 				}
 				
-				.smi-modal .menu-item.pin-window, .smi-modal .menu-item.new-window, .smi-modal .menu-item.close-window {
+				/*.smi-modal .menu-item.pin-window, .smi-modal .menu-item.close-window {
 					display: none;
-				}
+				}*/
 		
 			.smi-modal .machine-status {
 				display: block;
@@ -718,9 +764,9 @@
 				margin-top: 5px;
 			}
 			
-			.smi-modal .menu-item.pin-window, .smi-modal .menu-item.new-window, .smi-modal .menu-item.close-window {
+			/*.smi-modal .menu-item.pin-window, .smi-modal .menu-item.close-window {
 				display: block;
-			}
+			}*/
 			
 			.smi-modal .menu-item.preferences {
 				background-image: url(/images/glyph/menu-bar-div.png);
@@ -781,8 +827,11 @@
 				overflow: hidden;
 				padding-right: 40px;
 				text-shadow: 0 -1px 0 #000;
-				vertical-align: middle;
 			}
+			
+				.machine-audit > ul .popover-controls {
+					display: none;
+				}
 			
 				.machine-audit > ul li {
 					background-image: url(/images/glyph/machine-audit-div.png);
@@ -990,7 +1039,7 @@
 						color: #606f7d;
 						display: block;
 						font-size: 20px;
-						margin-top: 4px;
+						margin: 8px 0 5px 0;
 						text-shadow: 0 -1px 0 #303941;
 					}
 				
