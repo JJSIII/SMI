@@ -358,6 +358,11 @@
 	.clearfix {
 	    *zoom: 1;
 	}
+	
+	.overthrow-enabled .overthrow {
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+	}
 
 /* @end */
 
@@ -517,8 +522,8 @@
 				-moz-box-sizing: border-box;
 				-webkit-box-sizing: border-box;
 				box-sizing: border-box;
-				height: 30px;
-				line-height: 30px;
+				height: 40px;
+				line-height: 40px;
 				position: relative;
 				vertical-align: middle;
 				white-space: nowrap;
@@ -552,7 +557,7 @@
 					text-transform: capitalize;
 					vertical-align: top;
 					white-space: nowrap;
-					width: 180px;
+					width: 120px;
 				}
 				
 				.popover li .popover-controls {
@@ -598,13 +603,27 @@
 			padding: 10px 15px;
 			max-height: 240px;
 			overflow-y: scroll;
+			position: relative;
 			-moz-user-select: none;
 			-webkit-user-select: none;
 			user-select: none;
 		}
 		
+		.popover-content.overthrow-enabled {
+			max-height: 240px;
+		}
+		
 			
 	@media (min-width: 600px) {
+	
+		.popover li {
+			height: 30px;
+			line-height: 30px;
+		}
+		
+		.popover li .value {
+			width: 180px;
+		}
 	
 	}
 
