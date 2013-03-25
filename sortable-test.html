@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+		
+		<link href="/css/main.css" rel="stylesheet">
+		
+		<script src="/js/libs/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		
+	</head>
+	<body>
+	
+		<ul>
+		
+			<li><span class="label">Some Label</span><span class="value">Some Value</span><span class="popover-controls"><a class="popover-control-reorder"><i class="icon-menu"></i></a></span></li>
+			<li><span class="label">Some Label</span><span class="value">Some Value</span><span class="popover-controls"><a class="popover-control-reorder"><i class="icon-menu"></i></a></span></li>
+			<li><span class="label">Some Label</span><span class="value">Some Value</span><span class="popover-controls"><a class="popover-control-reorder"><i class="icon-menu"></i></a></span></li>
+			<li><span class="label">Some Label</span><span class="value">Some Value</span><span class="popover-controls"><a class="popover-control-reorder"><i class="icon-menu"></i></a></span></li>
+			<li><span class="label">Some Label</span><span class="value">Some Value</span><span class="popover-controls"><a class="popover-control-reorder"><i class="icon-menu"></i></a></span></li>
+			<li><span class="label">Some Label</span><span class="value">Some Value</span><span class="popover-controls"><a class="popover-control-reorder"><i class="icon-menu"></i></a></span></li>
+			<li><span class="label">Some Label</span><span class="value">Some Value</span><span class="popover-controls"><a class="popover-control-reorder"><i class="icon-menu"></i></a></span></li>
+		
+		</ul>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+		
+		<script>
+			// jquery touch-punch (converts mouse events to touch)
+			(function(c){c.support.touch=typeof Touch==="object";if(!c.support.touch){return;}var f=c.ui.mouse.prototype,g=f._mouseInit,a=f._mouseDown,e=f._mouseUp,b={touchstart:"mousedown",touchmove:"mousemove",touchend:"mouseup"};function d(h){var i=h.originalEvent.changedTouches[0];return c.extend(h,{type:b[h.type],which:1,pageX:i.pageX,pageY:i.pageY,screenX:i.screenX,screenY:i.screenY,clientX:i.clientX,clientY:i.clientY});}f._mouseInit=function(){var h=this;h.element.bind("touchstart."+h.widgetName,function(i){return h._mouseDown(d(i));});g.call(h);};f._mouseDown=function(j){var h=this,i=a.call(h,j);h._touchMoveDelegate=function(k){return h._mouseMove(d(k));};h._touchEndDelegate=function(k){return h._mouseUp(d(k));};c(document).bind("touchmove."+h.widgetName,h._touchMoveDelegate).bind("touchend."+h.widgetName,h._touchEndDelegate);return i;};f._mouseUp=function(i){var h=this;c(document).unbind("touchmove."+h.widgetName,h._touchMoveDelegate).unbind("touchend."+h.widgetName,h._touchEndDelegate);return e.call(h,i);};})(jQuery);
+			
+		</script>
+		
+		<script>
+		
+			$('ul').sortable({
+				axis: 'y',
+				placeholder: 'sortable-placeholder',
+				handle: '.popover-control-reorder',
+				revert: 100
+			});
+			
+			$('ul').disableSelection();
+		
+		</script>
+	</body>
+</html>

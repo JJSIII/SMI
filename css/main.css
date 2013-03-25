@@ -35,7 +35,7 @@
 	you can use the generic selector below, but it's slower:
 	[class*="icon-"]:before {
 	*/
-	.icon-pushpin, .icon-windows8, .icon-windows, .icon-dashboard, .icon-flag, .icon-star, .icon-warning, .icon-info, .icon-checkmark-circle, .icon-cancel-circle, .icon-close, .icon-plus, .icon-ticket, .icon-cog, .icon-cogs, .icon-alarm, .icon-list, .icon-wrench, .icon-user, .icon-calendar, .icon-arrow-down, .icon-arrow-left, .icon-arrow-right, .icon-arrow-up, .icon-checkmark, .icon-minus, .icon-tags, .icon-new-tab, .icon-search, .icon-power, .icon-envelop, .icon-phone, .icon-tools, .icon-menu {
+	.icon-pushpin, .icon-windows8, .icon-windows, .icon-dashboard, .icon-flag, .icon-star, .icon-warning, .icon-info, .icon-checkmark-circle, .icon-cancel-circle, .icon-close, .icon-plus, .icon-ticket, .icon-cog, .icon-cogs, .icon-alarm, .icon-list, .icon-wrench, .icon-user, .icon-calendar, .icon-arrow-down, .icon-arrow-left, .icon-arrow-right, .icon-arrow-up, .icon-checkmark, .icon-minus, .icon-tags, .icon-new-tab, .icon-search, .icon-power, .icon-envelop, .icon-phone, .icon-tools, .icon-menu, .icon-loop {
 		font-family: 'icomoon';
 		speak: none;
 		font-style: normal;
@@ -147,6 +147,9 @@
 	.icon-menu:before {
 		content: "\42";
 	}
+	.icon-loop:before {
+		content: "\43";
+	}
 	
 
 /* @end */
@@ -198,6 +201,10 @@
 	    font-size: 1em;
 	    font-weight: 400;
 	    line-height: 1.4;
+	}
+	
+	a {
+		color: #005d9a;
 	}
 	
 	a:link, a:visited {
@@ -561,7 +568,7 @@
 				}
 				
 				.popover li .popover-controls {
-					display: inline-block;
+					display: none;
 					height: 30px;
 					vertical-align: top;
 				}
@@ -621,10 +628,13 @@
 			line-height: 30px;
 		}
 		
-		.popover li .value {
-			width: 180px;
-		}
-	
+			.popover li .value {
+				width: 180px;
+			}
+			
+			.popover li .popover-controls {
+				display: inline-block;
+			}
 	}
 
 /* @end */
@@ -1150,34 +1160,6 @@
 			.smi-modal .section-tab-bodies > div.active {
 				display: block;
 			}
-		
-		.smi-modal .dashboard {
-			background-color: #f1f3f2;
-			box-shadow: inset 0 0 7px rgba(46,52,58,.5), inset 0 0 31px rgba(46,52,58,.27);
-			font-size: 0;
-			padding: 20px;
-			position: relative;
-			text-align: center;
-			-moz-user-select: none;
-			-webkit-user-select: none;
-			user-select: none;
-		}
-		
-			.smi-modal .dashlet {
-				-webkit-background-clip: padding-box;
-				background-clip: padding-box;
-				background-color: #f7fafc;
-				border: 1px solid #c8cfd6;
-				border-radius: 6px;
-				box-shadow: 0 1px 1px rgba(5,6,6,.1);
-				-moz-box-sizing: border-box;
-				-webkit-box-sizing: border-box;
-				box-sizing: border-box;
-				display: inline-block;
-				margin: 10px;
-				padding: 10px;
-				width: 213px;
-			}
 			
 		@media (min-width: 600px) {
 		
@@ -1188,24 +1170,6 @@
 				top: 205px;
 				position: absolute;
 			}
-			
-			.smi-modal .dashboard {
-				bottom: 0;
-				left: 0;
-				position: absolute;
-				right: 0;
-				top: 10px;
-				overflow: auto;
-			}
-			
-				.smi-modal .dashboard:after {
-					content: '';
-					height: 20px;
-					left: 0;
-					position: fixed;
-					top: 215px;
-					width: 100%;
-				}
 		}
 	
 	/* @end */
@@ -1342,17 +1306,169 @@
 	/* @end */
 	
 	
-/* @end */
-
-
-/* @group Fringe Cases */
-
-/*.time-column { Revisit - trying to avoid adding in ad hoc classes and would rather handle it holistically
-	    vertical-align: text-top;
-	    text-align: left;
-	    width: 10%;
-	    white-space: nowrap;
-
-	}*/
+	/* @group Data and Action Tables */
+	
+		table th, table td {
+			vertical-align: top;
+		}
+		
+			table.action-table th, table.action-table td {
+				vertical-align: middle;
+			}
+	
+		table a.action {
+			cursor: pointer;
+		}
+			
+		table a.icon {
+			color: #dde1e5;
+			cursor: pointer;
+			font-size: 16px;
+		}
+		
+			table a.icon:hover {
+				color: #c9ced2;
+			}
+			
+			table a.icon.active {
+				color: #ffc155;
+			}
+			
+		table time {
+			white-space: nowrap;
+		}
+		
+		table .pieChart {
+			padding: 0;
+			text-align: right;
+		}
+	
+	/* @end */
+	
+	
+	/* @group Dashboard */
+	
+		.dashboard {
+			background-color: #f1f3f2;
+			box-shadow: inset 0 0 7px rgba(46,52,58,.5), inset 0 0 31px rgba(46,52,58,.27);
+			font-size: 0;
+			padding: 20px;
+			position: relative;
+			text-align: center;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
+		}
+		
+			.dashlets {
+				font-size: 0;
+				margin: 0 auto;
+				text-align: left;
+				width: 260px;
+			}
+		
+			.dashlet {
+				-webkit-background-clip: padding-box;
+				background-clip: padding-box;
+				background-color: #f7fafc;
+				border: 1px solid #c8cfd6;
+				border-radius: 6px;
+				box-shadow: 0 1px 1px rgba(5,6,6,.1);
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				display: inline-block;
+				margin: 10px;
+				width: 220px;
+			}
+				
+				.dashlet .header {
+					border-bottom: 1px solid #dfe4e8;
+					color: #8d9aa6;
+					display: table;
+					font-size: 11px;
+					line-height: 20px;
+					text-align: left;
+					text-transform: uppercase;
+					width: 100%;
+				}
+				
+					.dashlet .header .title {
+						display: table-cell;
+						font-weight: 700;
+						padding-left: 10px;
+					}
+					
+					.dashlet .header .controls {
+						display: table-cell;
+						padding-right: 10px;
+						text-align: right;
+					}
+					
+						.dashlet .header .controls a.icon {
+							color: #dde1e5;
+							cursor: pointer;
+							font-size: 16px;
+							vertical-align: middle;
+						}
+						
+						.dashlet .header .controls a.icon:hover {
+							color: #c9ced2;
+						}
+							
+				.dashlet .body {
+					padding: 10px;
+				}
+					
+					.dashlet .body.thumbnail img {
+						display: block;
+					}
+					
+		@media (min-width: 600px) {
+		
+			.dashboard {
+				bottom: 0;
+				box-shadow: none;
+				left: 0;
+				position: absolute;
+				right: 0;
+				top: 10px;
+				overflow: auto;
+			}
+			
+			.dashboard:before {
+				bottom: 0;
+				box-shadow: inset 0 0 7px rgba(46,52,58,.5), inset 0 0 31px rgba(46,52,58,.27);
+				content: '';
+				display: block;
+				left: 0;
+				pointer-events: none;
+				position: fixed;
+				right: 0;
+				top: 215px;
+			}
+			
+		}
+		
+		@media (min-width: 520px) {
+			.dashlets {
+				width: 480px;
+			}
+		}
+		
+		@media (min-width: 760px) {
+			.dashlets {
+				width: 720px;
+			}
+		}
+		
+		@media (min-width: 1000px) {
+			.dashlets {
+				width: 960px;
+			}
+		}
+	
+	/* @end */
+	
 	
 /* @end */
