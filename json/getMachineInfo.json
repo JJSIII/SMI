@@ -1,6 +1,10 @@
 {
 	"Data" : [ 
 		{
+		   "Label":"Operating System",
+		   "Value":"Mac OS X"
+		},
+		{
 			"Label" : "Current User",
 			"Value" : "Administrator"
 		},
