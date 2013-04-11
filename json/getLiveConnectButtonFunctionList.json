@@ -1,0 +1,57 @@
+[ { "Id" : 560002,
+    "Label" : "Ticketing",
+    "LabelLstr" : "Ticketing"
+  },
+  { "Id" : 560003,
+    "Label" : "Desktop Access",
+    "LabelLstr" : "Desktop Access"
+  },
+  { "Id" : 560004,
+    "Label" : "Screen Shot",
+    "LabelLstr" : "Screen Shot"
+  },
+  { "Id" : 560005,
+    "Label" : "File Manager",
+    "LabelLstr" : "File Manager"
+  },
+  { "Id" : 560006,
+    "Label" : "Task Manager",
+    "LabelLstr" : "Task Manager"
+  },
+  { "Id" : 560007,
+    "Label" : "Event Viewer",
+    "LabelLstr" : "Event Viewer"
+  },
+  { "Id" : 560008,
+    "Label" : "Remote Control",
+    "LabelLstr" : "Remote Control"
+  },
+  { "Id" : 560009,
+    "Label" : "Command Shell",
+    "LabelLstr" : "Command Shell"
+  },
+  { "Id" : 560010,
+    "Label" : "Registry Editor",
+    "LabelLstr" : "Registry Editor"
+  },
+  { "Id" : 560011,
+    "Label" : "Chat",
+    "LabelLstr" : "Chat"
+  },
+  { "Id" : 560012,
+    "Label" : "Video Chat",
+    "LabelLstr" : "Video Chat"
+  },
+  { "Id" : 560013,
+    "Label" : "Reset Password",
+    "LabelLstr" : "Reset Password"
+  },
+  { "Id" : 560014,
+    "Label" : "Wake Machine",
+    "LabelLstr" : "Wake Machine"
+  },
+  { "Id" : 560015,
+    "Label" : "Record Desktop",
+    "LabelLstr" : "Record Desktop"
+  }
+]

@@ -1,0 +1,38 @@
+[
+	{
+		"Active" : false,
+		"Title" : "Screenshot"
+	},
+	{
+		"Active" : true,
+		"Title" : "Missing Patches"
+	},
+	{
+		"Active" : true,
+		"Title" : "Hard Drives"
+	},
+	{
+		"Active" : true,
+		"Title" : "Memory"
+	},
+	{
+		"Active" : true,
+		"Title" : "Policy Compliance"
+	},
+	{
+		"Active" : false,
+		"Title" : "Check-in Status"
+	},
+	{
+		"Active" : true,
+		"Title" : "Open Tickets"
+	},
+	{
+		"Active" : false,
+		"Title" : "Open Alarms"
+	},
+	{
+		"Active" : true,
+		"Title" : "Open Service Desk Tickets"
+	}
+]
