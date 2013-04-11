@@ -69,14 +69,18 @@ $(document).ready(function () {
 
 	    for (var i = 0; i < listOrder.length; i++) {
 	        for (var j = 0; j < list.length; j++) {
-
-	            if (list[j].id == listOrder[i]) {
+	
+	            //get dashletid
+	            var dashletId = list[j].id.split("-");
+	            if (dashletId[1] == listOrder[i]) {
 	                $('.dashlets').append(list[j]);//where parent_el is the place you want to reinsert the divs in the DOM  
-	                $(list[j]).css('display','inline-block').toggle().fadeIn(400);
+	                $(list[j]).css('display','inline-block').toggle().fadeIn(800);
 	            }
 	        }
-
+	
 	    }
+	    
+	    loadDashboards();
 
 	});
 
@@ -135,7 +139,7 @@ $(document).ready(function () {
 			$('.popover').mouseleave(function() {
 				// call timeout function to close popover
 				window.popoverTimer = setTimeout( function() {
-					removePopovers();
+					//removePopovers();
 				}, 2000);
 			});
 			
@@ -229,7 +233,7 @@ $(document).ready(function () {
 		popoverOpen = false;
 		
 		// reset rotated preferences icons
-		$('.dashboard-preferences.active').removeClass('active');
+		$('.preferences.active').removeClass('active');
 
 		//reload machine info if changes
 		if (machineInfoDirty) {
@@ -264,6 +268,15 @@ $(document).ready(function () {
 	var getData = function(url, agentGuid, callback) {
 		$.get(url, { agentGuid: agentGuid }).done(callback);
 	};
+	
+	var getDataByWidth = function (url, agentGuid, bigList, callback) {
+		$.get(url, { agentGuid: agentGuid, bigList: bigList }).done(callback);
+	};
+
+	var getIsBigWindow = function () {
+        return ($(window).width() > 1200);
+    };
+	
 	var getCheckMark = function(val) {
 		return (val ? '<i class="icon-checkmark-circle">' : '');
 	};
@@ -757,32 +770,15 @@ $(document).ready(function () {
 		}
 	});
 	
-	// dashboard preferences
-	$.ajax({
-	    url: '/json/dashboardPreferences.json',
-	    dataType: 'json',
-	    cache: false
-	}).done(function (data) {
-		var dashboardPreferencesMarkup = '';
-		var checked = '';
-		$.each(data, function(i) {
-			if (this.Active == true) {
-				checked = ' checked';
-			}
-			else {
-				checked = '';
-			}
-			dashboardPreferencesMarkup += '<li><label><input type="checkbox" ' + checked + '> ' + this.Title + '</label></li>';		
-		});
-		dashboardPreferencesMarkup = '<h3>Select Dashboard Items</h3><ul>' + dashboardPreferencesMarkup + '</ul>';
-		
-		$('.dashboard-preferences').click(function(event) {
-			createPopover(event, 'popover-dashboard-preferences', this, 'right', 'bottom', 'left', 'top', dashboardPreferencesMarkup);
-			$(this).addClass('active');
-		});
+	// preferences popover	
+	$('.menu-item.preferences').click(function(event) {
+		createPopover(event, 'popover-preferences', this, 'right', 'top', 'right', 'bottom', $('.preferences-form').html());
+		$(this).addClass('active');
 	});
 
     var loadDashboards = function () {
+    
+    	//TODO: check for visibility before performing ajax reqeusts.
         $.ajax({
             url: '/json/GetMachineAlarmsPerDay.json', ///vsapres/quickview/main/GetMachineAlarmsPerDay
             data: { agentGuid: agentGuid, duration: 7 },
@@ -809,6 +805,37 @@ $(document).ready(function () {
             var myLine = new Chart($("#alarmChart")[0].getContext("2d")).Line(lineChartData, { scaleOverride: true, scaleSteps: 4, scaleStepWidth: stepWidth, scaleStartValue: 0, scaleFontSize: 11 });
 
         });
+        
+        if ($('#dashlet-4').css('display') != 'none') {
+	        //load memory dashlet
+	        $.ajax({
+	            url: '/json/getmemorylist.json', ///vsapres/quickview/main/getmemorylist
+	            data: { agentGuid: agentGuid },
+	            dataType: 'json'
+	        }).done(function(data) {
+
+	            var usedMem = 0;
+	            var slotsHtml = '';
+	            var slotsUsed = 0;
+	            var slotsTotal = 0;
+	            $.each(data.Data, function() {
+
+	                if (this.SizeMb > 0) {
+	                    slotsHtml += '<div class="slot filled" title="Size: ' + this.SizeMb + '\nSpeed: ' + this.Speed + '"></div>';
+	                    slotsUsed++;
+	                    usedMem += this.SizeMb;
+	                } else {
+	                    slotsHtml += '<div class="slot"></div>';
+	                }
+	                slotsTotal++;
+	            });
+
+	            $('#mem-slots').empty().append(slotsHtml);
+	            $('#mem-slotstitle').html('Slots used (' + slotsUsed + '/' + slotsTotal + ')');
+	            $('#mem-amount').html('<span class="primary">' + usedMem + '</span>/<span class="secondary">' + data.TotalMemory + '</span>');
+
+	        });
+	    }
 
         if (diskVolumeData == null) {
             var disks = $.ajax({

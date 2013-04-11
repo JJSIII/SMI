@@ -43,7 +43,7 @@
 			
 				<div class="quicklaunch menu-item div">
 				
-					<a class="btn"><span>&nbsp;</span> <i class="icon-menu-2"></i></a>
+					<a class="btn primary"><span>&nbsp;</span> <i class="icon-menu-2"></i></a>
 				
 				</div>
 		
@@ -57,7 +57,7 @@
 				
 				<div class="window-controls">
 				
-					<span class="menu-item search div"><input type="search" placeholder="Search"></span>
+					<!--<span class="menu-item search div"><input type="search" placeholder="Search"></span>-->
 					
 					<a class="menu-item pin-window div" title="Pin window"><i class="icon-pushpin"></i></a>
 					
@@ -105,11 +105,9 @@
 			
 				<div class="dashboard active">
 				
-					<a class="dashboard-preferences" title="Dashboard preferences"><i class="icon-cog"></i></a>
-				
 					<div class="dashlets">
 					
-						<div class="dashlet screenshot" id="1">
+						<div class="dashlet screenshot" id="dashlet-1">
 							<div class="header">
 								<span class="title">Screenshot</span>
 								<span class="controls">
@@ -122,7 +120,7 @@
 							</div>
 						</div>
 						
-						<div class="dashlet missing-patches" id="2">
+						<div class="dashlet missing-patches" id="dashlet-2">
 							<div class="header">
 								<span class="title">Missing Patches</span>
 								<span class="controls">
@@ -135,7 +133,7 @@
 							</div>
 						</div>
 						
-						<div class="dashlet hard-drives" id="3">
+						<div class="dashlet hard-drives" id="dashlet-3">
 							<div class="header">
 								<span class="title" id="driveCount">Hard Drives (5)</span>
 								<span class="controls">
@@ -165,7 +163,7 @@
 							</div>
 						</div>
 						
-						<div class="dashlet memory" id="4">
+<!--						<div class="dashlet memory" id="dashlet-4">
 							<div class="header">
 								<span class="title">Memory</span>
 								<span class="controls">
@@ -183,9 +181,25 @@
 									<div class="slot"></div>
 								</div>
 							</div>
+						</div>-->
+						
+						<div class="dashlet memory" id="dashlet-4">
+							<div class="header">
+								<span class="title">Memory</span>
+								<span class="controls">
+									<a class="icon" title="Reload"><i class="icon-loop"></i></a>
+								</span>
+							</div>
+							<div class="body">
+								<div class="text-label amount-title" id="mem-ram">RAM (MB)</div>
+								<div class="text-label amount" id="mem-amount"></div>
+								<div class="text-label slots-title" id="mem-slotstitle"></div>
+								<div class="text-label slots" id="mem-slots"></div>
+							</div>
 						</div>
 						
-						<div class="dashlet policy-compliance" id="5">
+						
+						<div class="dashlet policy-compliance" id="dashlet-5">
 							<div class="header">
 								<span class="title">Policy Compliance</span>
 								<span class="controls">
@@ -198,7 +212,7 @@
 							</div>
 						</div>
 						
-						<div class="dashlet check-in-status" id="6">
+						<div class="dashlet check-in-status" id="dashlet-6">
 							<div class="header">
 								<span class="title">Check-In Status</span>
 								<span class="controls">
@@ -214,7 +228,7 @@
 							</div>
 						</div>
 						
-						<div class="dashlet tickets" id="7">
+						<div class="dashlet tickets" id="dashlet-7">
 							<div class="header">
 								<span class="title">Open Tickets</span>
 								<span class="controls">
@@ -227,7 +241,7 @@
 							</div>
 						</div>
 						
-						<div class="dashlet alarms" id="8">
+						<div class="dashlet alarms" id="dashlet-8">
 							<div class="header">
 								<span class="title">Open Alarms</span>
 								<span class="controls">
@@ -239,7 +253,7 @@
 							</div>
 						</div>
 						
-						<div class="dashlet service-desk-tickets" id="9">
+						<div class="dashlet service-desk-tickets" id="dashlet-9">
 					        <div class="header">
 					            <span class="title">Open Service Desk Tickets</span>
 					            <span class="controls">
@@ -252,7 +266,7 @@
 					        </div>
 					    </div>
                         
-                        <div class="dashlet cpu-info" id="10">
+                        <div class="dashlet cpu-info" id="dashlet-10">
 							<div class="header">
 								<span class="title">CPU Info</span>
 								<span class="controls">
@@ -551,6 +565,123 @@
 				<div class="tools">
 					<p>Tools</p>
 				</div>
+				
+			</div>
+		
+		</div>
+		
+		<div class="preferences-form">
+		
+			<div class="form">
+			
+				<div class="control-group">
+				
+					<label>QuickLaunch Items</label>
+				
+					<ul class="group-stacked ui-sortable">
+					
+						<li><label class="checkbox"><input type="checkbox"> Ticketing</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Desktop Access</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Screen Shot</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> File Manager</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Task Manager</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Event Viewer</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Remote Control</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Command Shell</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Registry Editor</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Chat</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Video Chat</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Reset Password</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Wake Machine</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Record Desktop</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+					
+					</ul>
+					
+				</div>
+			
+				<div class="control-group">
+				
+					<label>Dashboard Items</label>
+				
+					<ul class="group-stacked ui-sortable">
+					
+						<li><label class="checkbox"><input type="checkbox"> Screenshot</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Missing Patches</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Hard Drives</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Memory</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Policy Compliance</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Check-in Status</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Open Tickets</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Open Alarms</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						<li><label class="checkbox"><input type="checkbox"> Open Service Desk Tickets</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+					
+					</ul>
+					
+				</div>
+			
+				<div class="control-group">
+				
+					<label>Defaults</label>
+				
+					<div class="button-group-stacked">
+					
+						<a class="btn">Reset to plan default</a>
+						
+						<a class="btn">Reset to factory default</a>
+						
+						<a class="btn">Set as system default</a>
+						
+						<a class="btn">Force all users to system default</a>
+					
+					</div>
+				
+				</div>
+			
+				<div class="control-group">
+					
+					<label class="control-label">QuickView Theme</label>
+				
+					<div class="controls">
+						
+						<label class="checkbox"><input type="checkbox"> Use previous QuickView theme</label>
+						
+					</div>
+				
+				</div>
+				
+				<div class="control-group">
+					
+					<label class="control-label">Hover Delay</label>
+				
+					<div class="controls">
+						
+						<input type="number" value="500" class="small"> ms
+						<span class="description">Delay before displaying detail information when hovering over agent/asset icons</span>
+						
+					</div>
+				
+				</div>			
 				
 			</div>
 		
