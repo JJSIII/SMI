@@ -1,0 +1,126 @@
+<div class="preferences-form">
+		
+	<div class="form">
+	
+		<div class="tab-group">
+		
+			<ul class="tabs">
+				<li class="active"><a class="btn small grouped">QuickLaunch</a></li>
+				<li><a class="btn small grouped">Dashboard</a></li>
+				<li><a class="btn small grouped">General</a></li>
+			</ul>
+			
+			<div class="tab-content">
+			
+				<div class="active">
+					<div class="control-group">
+					
+						<label>QuickLaunch Items</label>
+					
+						<ul class="group-stacked ui-sortable" id="quickLaunchItems-pref"></ul>
+						
+					</div>
+				</div>
+				
+				<div>
+					<div class="control-group">
+					
+						<label>Dashboard Items</label>
+					
+						<ul class="group-stacked ui-sortable">
+						
+							<li><label class="checkbox"><input type="checkbox"> Screenshot</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+							
+							<li><label class="checkbox"><input type="checkbox"> Missing Patches</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+							
+							<li><label class="checkbox"><input type="checkbox"> Hard Drives</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+							
+							<li><label class="checkbox"><input type="checkbox"> Memory</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+							
+							<li><label class="checkbox"><input type="checkbox"> Policy Compliance</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+							
+							<li><label class="checkbox"><input type="checkbox"> Check-in Status</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+							
+							<li><label class="checkbox"><input type="checkbox"> Open Tickets</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+							
+							<li><label class="checkbox"><input type="checkbox"> Open Alarms</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+							
+							<li><label class="checkbox"><input type="checkbox"> Open Service Desk Tickets</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
+						
+						</ul>
+						
+					</div>
+					
+				</div>
+				
+				<div>
+				
+					<div class="control-group">
+									
+						<label>Defaults</label>
+					
+						<div class="button-group-stacked">
+						
+							<a class="btn" id="pref_ResetToPlanDefault">Reset to plan default</a>
+							
+							<a class="btn" id="pref_ResetToFactoryDefault">Reset to factory default</a>
+	
+							<a class="btn" id="pref_SetAsSystemDefault">Set as system default</a>
+	
+							<a class="btn" id="pref_ForceAllUsersToSystemDefault">Force all users to system default</a>
+						
+						</div>
+					
+					</div>
+				
+					<div class="control-group">
+						
+						<label class="control-label">QuickView Theme</label>
+					
+						<div class="controls">
+							
+							<label class="checkbox"><input type="checkbox"> Use previous theme</label>
+							
+						</div>
+					
+					</div>
+					
+					<div class="control-group">
+						
+						<label class="control-label">Hover Delay</label>
+					
+						<div class="controls">
+							
+							<input type="number" value="500" class="small"> ms
+							<span class="description">Delay before displaying detail information when hovering over agent/asset icons</span>
+							
+						</div>
+					
+					</div>
+					
+				</div>
+				
+			</div>
+		
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+
+	$(document).ready(function() {
+		
+		$('body').on('click', $('.btn'), function() {
+			alert('fuck');
+		});
+		
+	});
+
+</script>

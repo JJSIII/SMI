@@ -1,705 +1,250 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-	<head>
+    <head>
+    	<title>QuickView</title>
+
 		<meta charset="utf-8">
-		
-		<title>av-reports.root.kserver</title>
-		
+
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-		
+
 		<meta name="apple-mobile-web-app-capable" content="yes" />
-		
+
 		<meta name="apple-mobile-web-app-title" content="av-reports.root.kserver">
-		
+
 		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-		
+
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/touch/apple-touch-icon-114x114-precomposed.png">
-		
+
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/touch/apple-touch-icon-72x72-precomposed.png">
-		
+
 		<link rel="apple-touch-icon-precomposed" href="/images/touch/apple-touch-icon-57x57-precomposed.png">
-		
+
 		<meta name="msapplication-TileImage" content="/images/touch/apple-touch-icon-144x144-precomposed.png">
-		
+
 		<meta name="msapplication-TileColor" content="#2e343a">
-		
+
 		<link href="/css/main.css" rel="stylesheet">
-		
+
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
-		
+
 		<script src="/js/libs/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-		
+
 	</head>
 	<body>
-	
+
 		<div class="smi-modal">
-		
-			<div class="menu-bar">
-			
-				<div class="quicklaunch menu-item div">
-				
-					<a class="btn primary"><span>&nbsp;</span> <i class="icon-menu-2"></i></a>
-				
-				</div>
-		
-				<a class="machine-status menu-item" title="User online and active">
-					<img src="/images/status-icon/placeholder.png">
-				</a>
-				
-				 <div class="machine-name" id="machineName">
-				 	
-				 </div>
-				
-				<div class="window-controls">
-				
-					<!--<span class="menu-item search div"><input type="search" placeholder="Search"></span>-->
-					
-					<a class="menu-item pin-window div" title="Pin window"><i class="icon-pushpin"></i></a>
-					
-					<a class="menu-item new-window div" title="Open in new window" id="popNewWindow"><i class="icon-new-tab"></i></a>
-					
-					<a class="menu-item preferences div" title="Window preferences"><i class="icon-cog"></i></a>
-					
-					<a class="menu-item close-window" title="Close window"><i class="icon-close"></i></a>
-					
-				</div>
-			
-			</div>
-			
-			<div class="machine-info">
-			
-				<div class="machine-audit">
-					
-					<a class="popover-arrow" id="popoveraudit">&#187;</a>
-				
-				</div>
-			
-			</div>
-			
-			<div class="section-tabs">
-			
-				<ul class="horizontal clearfix">
-					
-					<li class="active"><a title="Dashboard"><i class="icon-dashboard"></i><span>Dashboard</span></a></li>
-					
-					<li><a title="Tickets"><i class="icon-ticket"></i><span>Tickets</span></a></li>
-					
-					<li><a title="Alarms"><i class="icon-alarm"></i><span>Alarms</span></a></li>
-					
-					<li><a title="Procedures"><i class="icon-cogs"></i><span>Procedures</span></a></li>
-					
-					<li><a title="Audit"><i class="icon-list"></i><span>Audit</span></a></li>
-					
-					<li><a title="Tools"><i class="icon-tools"></i><span>Tools</span></a></li>
-					
-				</ul>
-			
-			</div>
-			
+
+			<div class="menu-bar"></div>
+
+	        <div class="machine-info">
+	            <div class="machine-audit">
+	                <a class="popover-arrow" id="popoveraudit">&#187;</a>
+	            </div>
+	        </div>
+
+	        <div class="section-tabs">
+	            <ul class="horizontal clearfix"></ul>
+	        </div>
+
 			<div class="section-tab-bodies">
-			
-				<div class="dashboard active">
-				
+
+				<div class="Dashboard active">
+
 					<div class="dashlets">
-					
-						<div class="dashlet screenshot" id="dashlet-1">
-							<div class="header">
-								<span class="title">Screenshot</span>
-								<span class="controls">
-									<a class="icon" title="Open in new window"><i class="icon-new-tab"></i></a>
-									<a class="icon" title="Reload"><i class="icon-loop"></i></a>
-								</span>
-							</div>
-							<div class="body">
-								<img src="/images/screenshot-thumb.jpg" alt="Screenshot">
-							</div>
-						</div>
-						
-						<div class="dashlet missing-patches" id="dashlet-2">
-							<div class="header">
-								<span class="title">Missing Patches</span>
-								<span class="controls">
-									<a class="icon" title="Reload"><i class="icon-loop"></i></a>
-								</span>
-							</div>
-							<div class="body">
-								<div class="text-label xxl">24</div>
-								<div class="text-label checkbox"><label><input type="checkbox" checked> Based on Patch Policy</label></div>
-							</div>
-						</div>
-						
-						<div class="dashlet hard-drives" id="dashlet-3">
-							<div class="header">
-								<span class="title" id="driveCount">Hard Drives (5)</span>
-								<span class="controls">
-									<a class="icon" title="Reload"><i class="icon-loop"></i></a>
-								</span>
-							</div>
-							<div class="body pager">
-							
-								<ul class="pager-container">
-									<li class="pager-item active">
-										<div class="text-label title" id="volumeLabel">Drive A</div>
-										<div class="chart"><canvas id="diskChart" width="70" height="70"></canvas></div>
-										<div class="text-label stats">
-								            <ul id="diskDashData"></ul>
-										</div>
-									</li>
-								</ul>
-								
-								<ul class="pager-dots" id="diskPagerDots">
-								</ul>
-								
-								<ul class="pager-arrows">
-									<li class="left" id="prevDrive" title="click to view previous drive"><a><i class="icon-arrow-left"></i></a></li>
-									<li class="right" id="nextDrive" title="click to view next drive"><a><i class="icon-arrow-right"></i></a></li>
-								</ul>
-								
-							</div>
-						</div>
-						
-<!--						<div class="dashlet memory" id="dashlet-4">
-							<div class="header">
-								<span class="title">Memory</span>
-								<span class="controls">
-									<a class="icon" title="Reload"><i class="icon-loop"></i></a>
-								</span>
-							</div>
-							<div class="body">
-								<div class="text-label amount-title">RAM (MB)</div>
-								<div class="text-label amount"><span class="primary">1024</span>/<span class="secondary">2048</span></div>
-								<div class="text-label slots-title">Slots Used (2/4)</div>
-								<div class="text-label slots">
-									<div class="slot filled"></div>
-									<div class="slot filled"></div>
-									<div class="slot"></div>
-									<div class="slot"></div>
-								</div>
-							</div>
-						</div>-->
-						
-						<div class="dashlet memory" id="dashlet-4">
-							<div class="header">
-								<span class="title">Memory</span>
-								<span class="controls">
-									<a class="icon" title="Reload"><i class="icon-loop"></i></a>
-								</span>
-							</div>
-							<div class="body">
-								<div class="text-label amount-title" id="mem-ram">RAM (MB)</div>
-								<div class="text-label amount" id="mem-amount"></div>
-								<div class="text-label slots-title" id="mem-slotstitle"></div>
-								<div class="text-label slots" id="mem-slots"></div>
-							</div>
-						</div>
-						
-						
-						<div class="dashlet policy-compliance" id="dashlet-5">
-							<div class="header">
-								<span class="title">Policy Compliance</span>
-								<span class="controls">
-									<a class="icon" title="Reload"><i class="icon-loop"></i></a>
-								</span>
-							</div>
-							<div class="body">
-								<i class="icon-checkmark-circle compliant"></i>
-								<div class="text-label">Compliant</div>
-							</div>
-						</div>
-						
-						<div class="dashlet check-in-status" id="dashlet-6">
-							<div class="header">
-								<span class="title">Check-In Status</span>
-								<span class="controls">
-									<a class="icon" title="Reload"><i class="icon-loop"></i></a>
-								</span>
-							</div>
-							<div class="body">
-								<ul class="time-date">
-									<li><span class="label">Last Checkin</span> <strong>00:00 AM</strong> - 00/00/0000</li>
-									<li><span class="label">First Checkin</span> <strong>00:00 AM</strong> - 00/00/0000</li>
-									<li><span class="label">Last Reboot</span> <strong>00:00 AM</strong> - 00/00/0000</li>
-								</ul>
-							</div>
-						</div>
-						
-						<div class="dashlet tickets" id="dashlet-7">
-							<div class="header">
-								<span class="title">Open Tickets</span>
-								<span class="controls">
-									<a class="icon" title="Reload"><i class="icon-loop"></i></a>
-								</span>
-							</div>
-							<div class="body">
-								<div class="text-label xxl">16</div>
-								<div class="actions"><a class="btn small" href="/open-tickets/">View Open Tickets</a></div>
-							</div>
-						</div>
-						
-						<div class="dashlet alarms" id="dashlet-8">
-							<div class="header">
-								<span class="title">Open Alarms</span>
-								<span class="controls">
-									<a class="icon" title="Reload"><i class="icon-loop"></i></a>
-								</span>
-							</div>
-							<div class="body">
-								<canvas id="alarmChart" width="210" height="110"></canvas>
-							</div>
-						</div>
-						
-						<div class="dashlet service-desk-tickets" id="dashlet-9">
-					        <div class="header">
-					            <span class="title">Open Service Desk Tickets</span>
-					            <span class="controls">
-					                <a class="icon" title="Reload"><i class="icon-loop"></i></a>
-					            </span>
-					        </div>
-					        <div class="body">
-					            <div class="text-label xxl">23</div>
-					            <div class="actions"><a class="btn small" href="/open-service-desk-tickets/">View Open Tickets</a></div>
-					        </div>
-					    </div>
-                        
+
+                        <div class="dashlet screenshot" id="dashlet-1">
+                            <div class="header">
+                                <span class="title" id="dash-screenshot-title"><span class="truncated"></span></span>
+                                <span class="controls">
+                                    <a class="icon" id="screenshot-newwindow"><i class="icon-new-tab"></i></a>
+                                    <a class="icon" id="screenshot-reload"><i class="icon-loop"></i></a>
+                                </span>
+                            </div>
+                            <div class="body" id="dash-screenshot">
+                            	<img src="/images/screenshot-thumb.jpg">
+                            </div>
+                        </div>
+
+                        <div class="dashlet missing-patches" id="dashlet-2">
+                            <div class="header">
+                                <span class="title" id="dash-patch-title"><span class="truncated"></span></span>
+                                <span class="controls">
+                                    <a class="icon dash-reload"><i class="icon-loop"></i></a>
+                                </span>
+                            </div>
+                            <div class="body">
+                                <div class="text-label xxl">24</div>
+                                <div class="text-label checkbox"><label><input type="checkbox" checked> Based on Patch Policy</label></div>
+                            </div>
+                        </div>
+
+                        <div class="dashlet hard-drives" id="dashlet-3">
+                            <div class="header">
+                                <span class="title" id="dash-harddrive-title"><span class="truncated"></span></span>
+                                <span class="controls">
+                                    <a class="icon dash-reload" id="hard-drives-reload"><i class="icon-loop"></i></a>
+                                </span>
+                            </div>
+                            <div class="body pager">
+
+                                <ul class="pager-container">
+                                    <li class="pager-item active">
+                                        <div class="text-label title" id="volumeLabel"></div>
+                                        <div class="chart"><canvas id="diskChart" width="70" height="70"></canvas></div>
+                                        <div class="text-label stats">
+                                            <ul id="diskDashData"></ul>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <ul class="pager-dots" id="diskPagerDots"></ul>
+
+                                <ul class="pager-arrows">
+                                    <li class="left" id="prevDrive" title="click to view previous drive"><a><i class="icon-arrow-left"></i></a></li>
+                                    <li class="right" id="nextDrive" title="click to view next drive"><a><i class="icon-arrow-right"></i></a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                        <div class="dashlet memory" id="dashlet-4">
+                            <div class="header">
+                                <span class="title" id="dash-memory-title"><span class="truncated"></span></span>
+                                <span class="controls">
+                                    <a class="icon dash-reload" id="memory-reload"><i class="icon-loop"></i></a>
+                                </span>
+                            </div>
+                            <div class="body">
+                                <div class="text-label amount-title" id="mem-ram">RAM (MB)</div>
+                                <div class="text-label amount" id="mem-amount"></div>
+                                <div class="text-label slots-title" id="mem-slotstitle"></div>
+                                <div class="text-label slots" id="mem-slots"></div>
+                            </div>
+                        </div>
+
+                        <div class="dashlet policy-compliance" id="dashlet-5">
+                            <div class="header">
+                                <span class="title" id="dash-policy-title"><span class="truncated"></span></span>
+                                <span class="controls">
+                                    <a class="icon dash-reload" title="Reload"><i class="icon-loop"></i></a>
+                                </span>
+                            </div>
+                            <div class="body">
+                                <i class="icon-checkmark-circle compliant"></i>
+                                <div class="text-label" id="dash-policy-healthlabel"></div>
+                            </div>
+                        </div>
+
+                        <div class="dashlet check-in-status" id="dashlet-6">
+                            <div class="header">
+                                <span class="title" id="dash-checkin-title"><span class="truncated"></span></span>
+                                <span class="controls">
+                                    <a class="icon dash-reload" id="check-in-status-reload"><i class="icon-loop"></i></a>
+                                </span>
+                            </div>
+                            <div class="body">
+                                <ul class="time-date" id="checkin-info"></ul>
+                            </div>
+                        </div>
+
+                        <div class="dashlet tickets" id="dashlet-7">
+                            <div class="header">
+                                <span class="title" id="dash-tickets-title"><span class="truncated"></span></span>
+                                <span class="controls">
+                                    <a class="icon dash-reload"><i class="icon-loop"></i></a>
+                                </span>
+                            </div>
+                            <div class="body">
+                                <div class="text-label xxl">16</div>
+                                <div class="actions"><a class="btn small" href="/open-tickets/" id="dash-tickets-viewbutton"></a></div>
+                            </div>
+                        </div>
+
+                        <div class="dashlet alarms" id="dashlet-8">
+                            <div class="header">
+                                <span class="title" id="dash-alarms-title"><span class="truncated"></span></span>
+                                <span class="controls">
+                                    <a class="icon dash-reload" id="alarms-reload"><i class="icon-loop"></i></a>
+                                </span>
+                            </div>
+                            <div class="body" id="alarmChart-body">
+                                <canvas id="alarmChart" width="210" height="110"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="dashlet service-desk-tickets" id="dashlet-9">
+                            <div class="header">
+                                <span class="title" id="dash-servicedesk-title"><span class="truncated"></span></span>
+                                <span class="controls">
+                                    <a class="icon dash-reload"><i class="icon-loop"></i></a>
+                                </span>
+                            </div>
+                            <div class="body">
+                                <div class="text-label xxl">23</div>
+                                <div class="actions"><a class="btn small" href="/open-service-desk-tickets/" id="dash-servicedesk-viewbutton"></a></div>
+                            </div>
+                        </div>
+
                         <div class="dashlet cpu-info" id="dashlet-10">
-							<div class="header">
-								<span class="title">CPU Info</span>
-								<span class="controls">
-									<a class="icon" title="Reload"><i class="icon-loop"></i></a>
-								</span>
-							</div>
+                            <div class="header">
+                                <span class="title"><span class="truncated"></span></span>
+                                <span class="controls">
+                                    <a class="icon dash-reload"><i class="icon-loop"></i></a>
+                                </span>
+                            </div>
                             <div class="body">
                                 <div class="text-label amount-title" id="cpu-count"></div>
                                 <div class="text-label amount-title" id="cpu-ram"></div>
                                 <div class="text-label amount-title" id="cpu-speed"></div>
                                 <div class="text-label" id="cpu-desc"></div>
-
                             </div>
-						</div>
-						
-					</div>
-				
-				</div>
-				
-				
-				<div class="tickets">
-					<p>Tickets</p>
-				</div>
-				
-				<div class="alarms">
-				
-					<div class="local-nav-items">
-	                    <ul>
-	                        <li class="active"><a>Alarms</a></li>
-	                        <li><a>Monitor Log</a></li>
-	                    </ul>
-	                </div>
-                    
-                    <div class="local-body">
-					
-                        <div class="active">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Alarm ID</th>
-                                        <th>Time</th>
-                                        <th>Event</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="alarmLog"></tbody>
-                            </table>
                         </div>
-                        <div>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Time</th>
-                                        <th>SNMP Device</th>
-                                        <th>Type</th>
-                                        <th>Message</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="monitorActionLog"></tbody>
-                            </table>
-                        </div>
-
                     </div>
+
 				</div>
-				
-				<div class="procedures">
-				
-					<div class="local-nav-items">
-						<ul>
-							<li class="active"><a>Pending Procedures</a></li>
-							<li><a>Procedure History</a></li>
-							<li><a>Procedure Log</a></li>
-							<li><a>Execute Procedures</a></li>
-						</ul>
-					</div>
-					
-					<div class="local-body">
-					
-						<div class="active">
-							<table>
-							
-								<thead>
-									<tr>
-										<th>Pending Procedures</th>
-										<th>Scheduled Execution</th>
-										<th>Recurring Interval</th>
-										<th>Admin</th>
-									</tr>
-								</thead>
-								
-								<tbody>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-									<tr>
-										<td>Latest Audit</td>
-										<td>00:00:00 am on 00/00/0000</td>
-										<td>1 Day</td>
-										<td>chad.gniffke</td>
-									</tr>
-								</tbody>
-								
-							</table>
-						</div>
-						
-						<div>
-							<h2>Procedure History</h2>
-						</div>
-						
-						<div>
-							<h2>Procedure Log</h2>
-						</div>
-						
-						<div>
-							<table class="action-table">
-							
-								<thead>
-									<tr>
-										<th>Procedure</th>
-										<th></th>
-									</tr>
-								</thead>
-								
-								<tbody>
-									<tr>
-										<td><a class="action" title="Execute procedure">Procedure Title</a></td>
-										<td><a class="icon active" title="Favorite"><i class="icon-star"></i></a></td>
-									</tr>
-									<tr>
-										<td><a class="action" title="Execute procedure">Procedure Title</a></td>
-										<td><a class="icon" title="Favorite"><i class="icon-star"></i></a></td>
-									</tr>
-									<tr>
-										<td><a class="action" title="Execute procedure">Procedure Title</a></td>
-										<td><a class="icon" title="Favorite"><i class="icon-star"></i></a></td>
-									</tr>
-									<tr>
-										<td><a class="action" title="Execute procedure">Procedure Title</a></td>
-										<td><a class="icon" title="Favorite"><i class="icon-star"></i></a></td>
-									</tr>
-									<tr>
-										<td><a class="action" title="Execute procedure">Procedure Title</a></td>
-										<td><a class="icon active" title="Favorite"><i class="icon-star"></i></a></td>
-									</tr>
-									<tr>
-										<td><a class="action" title="Execute procedure">Procedure Title</a></td>
-										<td><a class="icon active" title="Favorite"><i class="icon-star"></i></a></td>
-									</tr>
-								</tbody>
-								
-							</table>
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				<div class="audit">
-					<p>Audit</p>
-				</div>
-				
-				<div class="tools">
-					<p>Tools</p>
-				</div>
-				
+
+				<div class="Tickets"></div>
+
+				<div class="Alarms"></div>
+
+				<div class="Procedures"></div>
+
+				<div class="Audit"></div>
+
+				<div class="Tools"></div>
+
 			</div>
-		
+
 		</div>
-		
-		<div class="preferences-form">
-		
-			<div class="form">
-			
-				<div class="control-group">
-				
-					<label>QuickLaunch Items</label>
-				
-					<ul class="group-stacked ui-sortable">
-					
-						<li><label class="checkbox"><input type="checkbox"> Ticketing</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Desktop Access</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Screen Shot</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> File Manager</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Task Manager</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Event Viewer</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Remote Control</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Command Shell</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Registry Editor</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Chat</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Video Chat</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Reset Password</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Wake Machine</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Record Desktop</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-					
-					</ul>
-					
-				</div>
-			
-				<div class="control-group">
-				
-					<label>Dashboard Items</label>
-				
-					<ul class="group-stacked ui-sortable">
-					
-						<li><label class="checkbox"><input type="checkbox"> Screenshot</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Missing Patches</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Hard Drives</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Memory</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Policy Compliance</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Check-in Status</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Open Tickets</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Open Alarms</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-						
-						<li><label class="checkbox"><input type="checkbox"> Open Service Desk Tickets</label><span class="group-controls"><a class="group-control-reorder" title="Drag to reorder"><i class="icon-menu"></i></a></span></li>
-					
-					</ul>
-					
-				</div>
-			
-				<div class="control-group">
-				
-					<label>Defaults</label>
-				
-					<div class="button-group-stacked">
-					
-						<a class="btn">Reset to plan default</a>
-						
-						<a class="btn">Reset to factory default</a>
-						
-						<a class="btn">Set as system default</a>
-						
-						<a class="btn">Force all users to system default</a>
-					
-					</div>
-				
-				</div>
-			
-				<div class="control-group">
-					
-					<label class="control-label">QuickView Theme</label>
-				
-					<div class="controls">
-						
-						<label class="checkbox"><input type="checkbox"> Use previous QuickView theme</label>
-						
-					</div>
-				
-				</div>
-				
-				<div class="control-group">
-					
-					<label class="control-label">Hover Delay</label>
-				
-					<div class="controls">
-						
-						<input type="number" value="500" class="small"> ms
-						<span class="description">Delay before displaying detail information when hovering over agent/asset icons</span>
-						
-					</div>
-				
-				</div>			
-				
-			</div>
-		
-		</div>
-		
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		
-		<script>
-		
-			var guid = '@ViewBag.guid';
-			var agentGuid = '@ViewBag.agentGuid';
-		
-		</script>
-		
-		<script type="text/javascript" src="/js/libs/Chart.js"></script>
-		<script type="text/javascript" src="/js/libs/jquery.ui.position.js"></script>
-		<script type="text/javascript" src="/js/libs/jquery.overthrow.js"></script>
-		<script type="text/javascript" src="/js/libs/jquery.number.js"></script>
+
+		<div class="preferences-form"></div>
+
+		<script type="text/javascript">
+            //setup owner networkId for ajax calls in discovereddevices.js
+            var guid = '@ViewBag.guid';
+            var agentGuid = '@ViewBag.agentGuid';
+            var adminId = '@ViewBag.adminId';
+        </script>
+
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <!--<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>-->
+
+		<link rel="stylesheet" href="/css/jquery.timepicker.css" />
+        <script src="/js/libs/jquery.ui.position.js"></script>
+		<script src="/js/libs/jquery.timepicker.js"></script>
+		<script src="/js/libs/Chart.js"></script>
+		<script src="/js/libs/jquery.overthrow.js"></script>
+		<script src="/js/libs/jquery.number.js"></script>
+		<script src="/js/libs/jquery.sparkline-2.1.1.js"></script>
+		<script src="/js/libs/jquery.fs.tipper.js"></script>
+		<script src="/js/libs/select2.js"></script>
+		<script src="/js/dashboard.js"></script>
+		<script src="/js/qvStaticConfig.js"></script>
+		<script src="/js/qvEvents.js"></script>
 		<script src="/js/main.js"></script>
 	</body>
 </html>
